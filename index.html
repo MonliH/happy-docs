@@ -1,0 +1,3725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.12">
+<meta name="author" content="Simon Marlow, Andy Gill">
+<title>Happy User Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Happy User Guide</h1>
+<div class="details">
+<span id="author" class="author">Simon Marlow</span><br>
+<span id="author2" class="author">Andy Gill</span><br>
+<span id="revdate">2001-4-27</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_happy_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_sec_compatibility">1.1. Compatibility</a></li>
+<li><a href="#_sec_reporting_bugs">1.2. Reporting Bugs</a></li>
+<li><a href="#_sec_license">1.3. License</a></li>
+<li><a href="#_sec_obtaining">1.4. Obtaining <code class="app">Happy</code></a></li>
+</ul>
+</li>
+<li><a href="#_sec_using">2. Using <code class="app">Happy</code></a>
+<ul class="sectlevel2">
+<li><a href="#_sec_other_datatypes">2.1. Returning other datatypes</a></li>
+<li><a href="#_sec_sequences">2.2. Parsing sequences</a></li>
+<li><a href="#_sec_precedences">2.3. Using Precedences</a></li>
+<li><a href="#_sec_type_signatures">2.4. Type Signatures</a></li>
+<li><a href="#_sec_monads">2.5. Monadic Parsers</a></li>
+<li><a href="#_sec_error">2.6. The Error Token</a></li>
+<li><a href="#_sec_multiple_parsers">2.7. Generating Multiple Parsers From a Single Grammar</a></li>
+</ul>
+</li>
+<li><a href="#_sec_glr">3. Generalized LR Parsing</a>
+<ul class="sectlevel2">
+<li><a href="#_sec_glr_intro">3.1. Introduction</a></li>
+<li><a href="#_sec_glr_using">3.2. Basic use of a Happy-generated GLR parser</a></li>
+<li><a href="#_sec_glr_semantics">3.3. Including semantic results</a></li>
+<li><a href="#_sec_glr_misc">3.4. Further information</a></li>
+</ul>
+</li>
+<li><a href="#_sec_attributegrammar">4. Attribute Grammars</a>
+<ul class="sectlevel2">
+<li><a href="#_sec_introattributegrammars">4.1. Introduction</a></li>
+<li><a href="#_sec_atrributegrammarsinhappy">4.2. Attribute Grammars in Happy</a></li>
+<li><a href="#_sec_attrgrammarlimits">4.3. Limits of Happy Attribute Grammars</a></li>
+<li><a href="#_sec_attributegrammarexample">4.4. Example Attribute Grammars</a></li>
+</ul>
+</li>
+<li><a href="#_sec_invoking">5. Invoking <code class="app">Happy</code></a></li>
+<li><a href="#_sec_grammar_files">6. Syntax of Grammar Files</a>
+<ul class="sectlevel2">
+<li><a href="#_sec_lexical_rules">6.1. Lexical Rules</a></li>
+<li><a href="#_sec_module_header">6.2. Module Header</a></li>
+<li><a href="#_sec_directives">6.3. Directives</a></li>
+<li><a href="#_sec_grammar">6.4. Grammar</a></li>
+<li><a href="#_sec_module_trailer">6.5. Module Trailer</a></li>
+</ul>
+</li>
+<li><a href="#_sec_info_files">7. Info Files</a>
+<ul class="sectlevel2">
+<li><a href="#_sec_info_files_states">7.1. States</a></li>
+<li><a href="#_sec_info_files_conflicts">7.2. Interpreting conflicts</a></li>
+</ul>
+</li>
+<li><a href="#_sec_tips">8. Tips</a>
+<ul class="sectlevel2">
+<li><a href="#_sec_performance_tips">8.1. Performance Tips</a></li>
+<li><a href="#_sec_compilation_time">8.2. Compilation-Time Tips</a></li>
+<li><a href="#_sec_finding_errors">8.3. Finding Type Errors</a></li>
+<li><a href="#_sec_conflict_tips">8.4. Conflict Tips</a></li>
+<li><a href="#_sec_happy_ghci">8.5. Using Happy with <code class="app">GHCi</code></a></li>
+<li><a href="#_sec_monad_alex">8.6. Basic monadic Happy use with Alex</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_happy_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code class="app">Happy</code> is a parser generator system for Haskell, similar to the tool <code class="app">yacc</code> for C.
+Like <code class="app">yacc</code>, it takes a file containing an annotated BNF specification of a grammar and produces a Haskell module containing a parser for the grammar.
+</p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> is flexible: you can have several <code class="app">Happy</code> parsers in the same program, and each parser may have multiple entry points. <code class="app">Happy</code> can work in conjunction with a lexical analyser supplied by the user (either hand-written or generated by another program), or it can parse a stream of characters directly (but this isn&#8217;t practical in most cases).  In a future version we hope to include a lexical analyser generator with <code class="app">Happy</code> as a single package.</p>
+</div>
+<div class="paragraph">
+<p>Parsers generated by <code class="app">Happy</code> are fast; generally faster than an equivalent parser written using parsing combinators or similar tools.
+Furthermore, any future improvements made to <code class="app">Happy</code> will benefit an existing grammar, without need for a rewrite.</p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> is sufficiently powerful to parse full Haskell - <a href="http://www.haskell.org/ghc">GHC</a> itself uses a Happy parser.
+
+</p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> can currently generate four types of parser from a given grammar, the intention being that we can experiment with different kinds of functional code to see which is the best, and compiler writers can use the different types of parser to tune their compilers.
+The types of parser supported are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&#8220;standard&#8221; Haskell 98 (should work with any compiler that compiles Haskell 98).</p>
+</li>
+<li>
+<p>standard Haskell using arrays</p>
+<div class="paragraph">
+<p>
+	(this is not the default because we have found this generates slower parsers than <a href="#_item_default_backend">[_item_default_backend]</a>).</p>
+</div>
+</li>
+<li>
+<p>Haskell with GHC</p>
+<div class="paragraph">
+<p>	(Glasgow Haskell) extensions.
+This is a slightly faster option than <a href="#_item_default_backend">[_item_default_backend]</a> for Glasgow Haskell users.</p>
+</div>
+</li>
+<li>
+<p>GHC Haskell with string-encoded arrays. This is the fastest/smallest option for GHC users. If you&#8217;re using GHC, the optimum flag settings are <code>-agc</code> (see <a href="#_sec_invoking">Invoking <code class="app">Happy</code></a>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Happy can also generate parsers which will dump debugging information at run time, showing state transitions and the input tokens to the parser.</p>
+</div>
+<div class="sect2">
+<h3 id="_sec_compatibility">1.1. Compatibility</h3>
+<div class="paragraph">
+<p><code class="app">Happy</code> is written in Glasgow Haskell.
+This means that (for the time being), you need GHC to compile it.
+Any version of GHC &gt;= 6.2 should work.</p>
+</div>
+<div class="paragraph">
+<p>Remember: parsers produced using <code class="app">Happy</code> should compile without difficulty under any Haskell 98 compiler or interpreter.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_reporting_bugs">1.2. Reporting Bugs</h3>
+<div class="paragraph">
+<p>Any bugs found in <code class="app">Happy</code> should be reported to me: Simon Marlow <a href="mailto:marlowsd@gmail.com">marlowsd@gmail.com</a> including all the relevant information: the compiler used to compile <code class="app">Happy</code>, the command-line options used, your grammar file or preferably a cut-down example showing the problem, and a description of what goes wrong.
+A patch to fix the problem would also be greatly appreciated.</p>
+</div>
+<div class="paragraph">
+<p>Requests for new features should also be sent to the above address, especially if accompanied by patches :-).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_license">1.3. License</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Previous versions of <code class="app">Happy</code> were covered by the GNU general public license.
+We&#8217;re now distributing <code class="app">Happy</code> with a less restrictive BSD-style license.
+If this license doesn&#8217;t work for you, please get in touch.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Copyright 2009, Simon Marlow and Andy Gill.
+All rights reserved.</p>
+</div>
+<div class="paragraph">
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p>
+</li>
+<li>
+<p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_obtaining">1.4. Obtaining <code class="app">Happy</code></h3>
+<div class="paragraph">
+<p><code class="app">Happy</code>'s web page can be found at <a href="http://www.haskell.org/happy/" class="bare">http://www.haskell.org/happy/</a>. <code class="app">Happy</code> source and binaries can be downloaded from there.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_using">2. Using <code class="app">Happy</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Users of <code class="app">Yacc</code> will find <code class="app">Happy</code> quite familiar.
+The basic idea is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Define the grammar you want to parse in a <code class="app">Happy</code> grammar file.</p>
+</li>
+<li>
+<p>Run the grammar through <code class="app">Happy</code>, to generate a compilable Haskell module.</p>
+</li>
+<li>
+<p>Use this module as part of your Haskell program, usually in conjunction with a lexical analyser (a function that splits the input into &#8220;tokens&#8221;, the basic unit of parsing).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s run through an example.
+We&#8217;ll implement a parser for a simple expression syntax, consisting of integers, variables, the operators <code>\+</code>, <code>-</code>, <code>\*</code>, <code>/</code>, and the form <code>let var = exp in exp</code>.
+The grammar file starts off like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+module Main where
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At the top of the file is an optional <em class="term">module
+    header</em>,
+ which is just a Haskell module header enclosed in braces.
+This code is emitted verbatim into the generated module, so you can put any Haskell code here at all.
+In a grammar file, Haskell code is always contained between curly braces to distinguish it from the grammar.</p>
+</div>
+<div class="paragraph">
+<p>In this case, the parser will be a standalone program so we&#8217;ll call the module <code>Main</code>.</p>
+</div>
+<div class="paragraph">
+<p>Next comes a couple of declarations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%name calc
+%tokentype { Token }
+%error { parseError }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>The first line declares the name of the parsing function that <code class="app">Happy</code> will generate, in this case <code>calc</code>.
+In many cases, this is the only symbol you need to export from the module.</p>
+</div>
+<div class="paragraph">
+<p>The second line declares the type of tokens that the parser will accept.
+The parser (i.e.
+the function <code>calc</code>) will be of type <code>[Token] &#8594;
+    T</code>, where <code>T</code> is the return type of the parser, determined by the production rules below.</p>
+</div>
+<div class="paragraph">
+<p>The <code>%error</code> directive tells Happy the name of a function it should call in the event of a parse error.
+More about this later.</p>
+</div>
+<div class="paragraph">
+<p>Now we declare all the possible tokens:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%token
+      let             { TokenLet }
+      in              { TokenIn }
+      int             { TokenInt $$ }
+      var             { TokenVar $$ }
+      '='             { TokenEq }
+      '+'             { TokenPlus }
+      '-'             { TokenMinus }
+      '*'             { TokenTimes }
+      '/'             { TokenDiv }
+      '('             { TokenOB }
+      ')'             { TokenCB }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The symbols on the left are the tokens as they will be referred to in the rest of the grammar, and to the right of each token enclosed in braces is a Haskell pattern that matches the token.
+The parser will expect to receive a stream of tokens, each of which will match one of the given patterns (the definition of the <code>Token</code> datatype is given later).</p>
+</div>
+<div class="paragraph">
+<p>The <code>&dollar;&dollar;</code> symbol is a placeholder that represents the <em>value</em> of this token.
+Normally the value of a token is the token itself, but by using the <code>&dollar;&dollar;</code> symbol you can specify some component of the token object to be the value.
+</p>
+</div>
+<div class="paragraph">
+<p>Like yacc, we include <code>%%</code> here, for no real reason.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we have the production rules for the grammar.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Exp   : let var '=' Exp in Exp  { Let $2 $4 $6 }
+      | Exp1                    { Exp1 $1 }
+
+Exp1  : Exp1 '+' Term           { Plus $1 $3 }
+      | Exp1 '-' Term           { Minus $1 $3 }
+      | Term                    { Term $1 }
+
+Term  : Term '*' Factor         { Times $1 $3 }
+      | Term '/' Factor         { Div $1 $3 }
+      | Factor                  { Factor $1 }
+
+Factor
+      : int                     { Int $1 }
+      | var                     { Var $1 }
+      | '(' Exp ')'             { Brack $2 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Each production consists of a <em class="term">non-terminal</em> symbol on the left, followed by a colon, followed by one or more expansions on the right, separated by <code>|</code>.
+Each expansion has some Haskell code associated with it, enclosed in braces as usual.</p>
+</div>
+<div class="paragraph">
+<p>The way to think about a parser is with each symbol having a &#8220;value&#8221;: we defined the values of the tokens above, and the grammar defines the values of non-terminal symbols in terms of sequences of other symbols (either tokens or non-terminals).  In a production like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>n   : t_1 ... t_n   { E }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>whenever the parser finds the symbols <code>t_1&#8230;&#8203;t_n</code> in the token stream, it constructs the symbol <code>n</code> and gives it the value <code>E</code>, which may refer to the values of <code>t_1&#8230;&#8203;t_n</code> using the symbols <code>&dollar;1&#8230;&#8203;&dollar;n</code>.</p>
+</div>
+<div class="paragraph">
+<p>The parser reduces the input using the rules in the grammar until just one symbol remains: the first symbol defined in the grammar (namely <code>Exp</code> in our example).  The value of this symbol is the return value from the parser.</p>
+</div>
+<div class="paragraph">
+<p>To complete the program, we need some extra code.
+The grammar file may optionally contain a final code section, enclosed in curly braces.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All parsers must include a function to be called in the event of a parse error.
+In the <code>%error</code> directive earlier, we specified that the function to be called on a parse error is <code>parseError</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parseError :: [Token] -&gt; a
+parseError _ = error "Parse error"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that <code>parseError</code> must be polymorphic in its return type <code>a</code>, which usually means it must be a call to <code>error</code>.
+We&#8217;ll see in <a href="#_sec_monads">Monadic Parsers</a> how to wrap the parser in a monad so that we can do something more sensible with errors.
+It&#8217;s also possible to keep track of line numbers in the parser for use in error messages, this is described in <a href="#_sec_line_numbers">Line Numbers</a>.</p>
+</div>
+<div class="paragraph">
+<p>Next we can declare the data type that represents the parsed expression:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data Exp
+      = Let String Exp Exp
+      | Exp1 Exp1
+      deriving Show
+
+data Exp1
+      = Plus Exp1 Term
+      | Minus Exp1 Term
+      | Term Term
+      deriving Show
+
+data Term
+      = Times Term Factor
+      | Div Term Factor
+      | Factor Factor
+      deriving Show
+
+data Factor
+      = Int Int
+      | Var String
+      | Brack Exp
+      deriving Show</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the data structure for the tokens&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data Token
+      = TokenLet
+      | TokenIn
+      | TokenInt Int
+      | TokenVar String
+      | TokenEq
+      | TokenPlus
+      | TokenMinus
+      | TokenTimes
+      | TokenDiv
+      | TokenOB
+      | TokenCB
+ deriving Show</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>... and a simple lexer that returns this data structure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>lexer :: String -&gt; [Token]
+lexer [] = []
+lexer (c:cs)
+      | isSpace c = lexer cs
+      | isAlpha c = lexVar (c:cs)
+      | isDigit c = lexNum (c:cs)
+lexer ('=':cs) = TokenEq : lexer cs
+lexer ('+':cs) = TokenPlus : lexer cs
+lexer ('-':cs) = TokenMinus : lexer cs
+lexer ('*':cs) = TokenTimes : lexer cs
+lexer ('/':cs) = TokenDiv : lexer cs
+lexer ('(':cs) = TokenOB : lexer cs
+lexer (')':cs) = TokenCB : lexer cs
+
+lexNum cs = TokenInt (read num) : lexer rest
+      where (num,rest) = span isDigit cs
+
+lexVar cs =
+   case span isAlpha cs of
+      ("let",rest) -&gt; TokenLet : lexer rest
+      ("in",rest)  -&gt; TokenIn : lexer rest
+      (var,rest)   -&gt; TokenVar var : lexer rest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And finally a top-level function to take some input, parse it, and print out the result.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>main = getContents &gt;&gt;= print . calc . lexer
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And that&#8217;s it! A whole lexer, parser and grammar in a few dozen lines.
+Another good example is <code class="app">Happy</code>'s own parser.
+Several features in <code class="app">Happy</code> were developed using this as an example.
+</p>
+</div>
+<div class="paragraph">
+<p>To generate the Haskell module for this parser, type the command <code>happy example.y</code> (where <em class="path">example.y</em> is the name of the grammar file). The Haskell module will be placed in a file named <em class="path">example.hs</em>.
+Additionally, invoking the command <code>happy example.y -i</code> will produce the file <em class="path">example.info</em> which contains detailed information about the parser, including states and reduction rules (see <a href="#_sec_info_files">Info Files</a>).  This can be invaluable for debugging parsers, but requires some knowledge of the operation of a shift-reduce parser.</p>
+</div>
+<div class="sect2">
+<h3 id="_sec_other_datatypes">2.1. Returning other datatypes</h3>
+<div class="paragraph">
+<p>In the above example, we used a data type to represent the syntax being parsed.
+However, there&#8217;s no reason why it has to be this way: you could calculate the value of the expression on the fly, using productions like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Term  : Term '*' Factor         { $1 * $3 }
+      | Term '/' Factor         { $1 / $3 }
+      | Factor                  { $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of a <code>Term</code> would be the value of the expression itself, and the parser could return an integer.</p>
+</div>
+<div class="paragraph">
+<p>This works for simple expression types, but our grammar includes variables and the <code>let</code> syntax.
+How do we know the value of a variable while we&#8217;re parsing it?  We don&#8217;t, but since the Haskell code for a production can be anything at all, we could make it a function that takes an environment of variable values, and returns the computed value of the expression:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Exp   : let var '=' Exp in Exp  { \p -&gt; $6 (($2,$4 p):p) }
+      | Exp1                    { $1 }
+
+Exp1  : Exp1 '+' Term           { \p -&gt; $1 p + $3 p }
+      | Exp1 '-' Term           { \p -&gt; $1 p - $3 p }
+      | Term                    { $1 }
+
+Term  : Term '*' Factor         { \p -&gt; $1 p * $3 p }
+      | Term '/' Factor         { \p -&gt; $1 p `div` $3 p }
+      | Factor                  { $1 }
+
+Factor
+      : int                     { \p -&gt; $1 }
+      | var                     { \p -&gt; case lookup $1 p of
+	                                    Nothing -&gt; error "no var"
+					    Just i  -&gt; i }
+      | '(' Exp ')'             { $2 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of each production is a function from an environment <em>p</em> to a value.
+When parsing a <code>let</code> construct, we extend the environment with the new binding to find the value of the body, and the rule for <code>var</code> looks up its value in the environment.
+There&#8217;s something you can&#8217;t do in <code>yacc</code> :-)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_sequences">2.2. Parsing sequences</h3>
+<div class="paragraph">
+<p>A common feature in grammars is a <em>sequence</em> of a particular syntactic element.
+In EBNF, we&#8217;d write something like <code>n+</code> to represent a sequence of one or more <code>n</code>s, and <code>n*</code> for zero or more. <code class="app">Happy</code> doesn&#8217;t support this syntax explicitly, but you can define the equivalent sequences using simple productions.</p>
+</div>
+<div class="paragraph">
+<p>For example, the grammar for <code class="app">Happy</code> itself contains a rule like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>prods : prod                   { [$1] }
+      | prods prod             { $2 : $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In other words, a sequence of productions is either a single production, or a sequence of productions followed by a single production.
+This recursive rule defines a sequence of one or more productions.</p>
+</div>
+<div class="paragraph">
+<p>One thing to note about this rule is that we used <em>left recursion</em> to define it - we could have written it like this:
+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>prods : prod                  { [$1] }
+      | prod prods            { $1 : $2 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The only reason we used left recursion is that <code class="app">Happy</code> is more efficient at parsing left-recursive rules; they result in a constant stack-space parser, whereas right-recursive rules require stack space proportional to the length of the list being parsed.
+This can be extremely important where long sequences are involved, for instance in automatically generated output.
+For example, the parser in GHC used to use right-recursion to parse lists, and as a result it failed to parse some <code class="app">Happy</code>-generated modules due to running out of stack space!</p>
+</div>
+<div class="paragraph">
+<p>One implication of using left recursion is that the resulting list comes out reversed, and you have to reverse it again to get it in the original order.
+Take a look at the <code class="app">Happy</code> grammar for Haskell for many examples of this.</p>
+</div>
+<div class="paragraph">
+<p>Parsing sequences of zero or more elements requires a trivial change to the above pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>prods : {- empty -}           { [] }
+      | prods prod            { $2 : $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Yes - empty productions are allowed.
+The normal convention is to include the comment <code>{- empty -}</code> to make it more obvious to a reader of the code what&#8217;s going on.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_separators">2.2.1. Sequences with separators</h4>
+<div class="paragraph">
+<p>A common type of sequence is one with a <em>separator</em>: for instance function bodies in C consist of statements separated by semicolons.
+To parse this kind of sequence we use a production like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>stmts : stmt                   { [$1] }
+      | stmts ';' stmt         { $3 : $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the <code>;</code> is to be a <em>terminator</em> rather than a separator (i.e.
+there should be one following each statement), we can remove the semicolon from the above rule and redefine <code>stmt</code> as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>stmt : stmt1 ';'              { $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>stmt1</code> is the real definition of statements.</p>
+</div>
+<div class="paragraph">
+<p>We might like to allow extra semicolons between statements, to be a bit more liberal in what we allow as legal syntax.
+We probably just want the parser to ignore these extra semicolons, and not generate a ``null statement'' value or something.
+The following rule parses a sequence of zero or more statements separated by semicolons, in which the statements may be empty:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>stmts : stmts ';' stmt          { $3 : $1 }
+      | stmts ';'               { $1 }
+      | stmt			{ [$1] }
+      | {- empty -}		{ [] }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parsing sequences of <em>one</em> or more possibly null statements is left as an exercise for the reader&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_precedences">2.3. Using Precedences</h3>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>Going back to our earlier expression-parsing example, wouldn&#8217;t it be nicer if we didn&#8217;t have to explicitly separate the expressions into terms and factors, merely to make it clear that <code>'*'</code> and <code>'/'</code> operators bind more tightly than <code>'+'</code> and <code>'-'</code>?</p>
+</div>
+<div class="paragraph">
+<p>We could just change the grammar as follows (making the appropriate changes to the expression datatype too):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Exp   : let var '=' Exp in Exp  { Let $2 $4 $6 }
+      | Exp '+' Exp             { Plus $1 $3 }
+      | Exp '-' Exp             { Minus $1 $3 }
+      | Exp '*' Exp             { Times $1 $3 }
+      | Exp '/' Exp             { Div $1 $3 }
+      | '(' Exp ')'             { Brack $2 }
+      | int                     { Int $1 }
+      | var                     { Var $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>but now Happy will complain that there are shift/reduce conflicts because the grammar is ambiguous - we haven&#8217;t specified whether e.g. <code>1 + 2 * 3</code> is to be parsed as <code>1 + (2 * 3)</code> or <code>(1 + 2) *
+      3</code>.
+Happy allows these ambiguities to be resolved by specifying the <em class="term">precedences</em> of the operators involved using directives in the header<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>...
+%right in
+%left '+' '-'
+%left '*' '/'
+%%
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>
+
+</p>
+</div>
+<div class="paragraph">
+<p>The <code>%left</code> or <code>%right</code> directive is followed by a list of terminals, and declares all these tokens to be left or right-associative respectively.
+The precedence of these tokens with respect to other tokens is established by the order of the <code>%left</code> and <code>%right</code> directives: earlier means lower precedence.
+A higher precedence causes an operator to bind more tightly; in our example above, because <code>'*'</code> has a higher precedence than <code>'+'</code>, the expression <code>1 + 2 * 3</code> will parse as <code>1
+      + (2 * 3)</code>.</p>
+</div>
+<div class="paragraph">
+<p>What happens when two operators have the same precedence? This is when the <em class="term">associativity</em> comes into play.
+Operators specified as left associative will cause expressions like <code>1 + 2 - 3</code> to parse as <code>(1 + 2) - 3</code>, whereas right-associative operators would parse as <code>1 + (2 - 3)</code>.
+There is also a <code>%nonassoc</code> directive which indicates that the specified operators may not be used together.
+For example, if we add the comparison operators <code>'&gt;'</code> and <code>'&lt;'</code> to our grammar, then we would probably give their precedence as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>...
+%right in
+%nonassoc '&gt;' '&lt;'
+%left '+' '-'
+%left '*' '/'
+%%
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>which indicates that <code>'&gt;'</code> and <code>'&lt;'</code> bind less tightly than the other operators, and the non-associativity causes expressions such as <code>1 &gt; 2 &gt; 3</code> to be disallowed.</p>
+</div>
+<div class="sect3">
+<h4 id="_how_precedence_works">2.3.1. How precedence works</h4>
+<div class="paragraph">
+<p>The precedence directives, <code>%left</code>, <code>%right</code> and <code>%nonassoc</code>, assign precedence levels to the tokens in the declaration.
+A rule in the grammar may also have a precedence: if the last terminal in the right hand side of the rule has a precedence, then this is the precedence of the whole rule.</p>
+</div>
+<div class="paragraph">
+<p>The precedences are used to resolve ambiguities in the grammar.
+If there is a shift/reduce conflict, then the precedence of the rule and the lookahead token are examined in order to resolve the conflict:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the precedence of the rule is higher, then the conflict is resolved as a reduce.</p>
+</li>
+<li>
+<p>If the precedence of the lookahead token is higher, then the conflict is resolved as a shift.</p>
+</li>
+<li>
+<p>If the precedences are equal, then</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the token is left-associative, then reduce</p>
+</li>
+<li>
+<p>If the token is right-associative, then shift</p>
+</li>
+<li>
+<p>If the token is non-associative, then fail</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If either the rule or the token has no precedence, then the default is to shift (these conflicts are reported by Happy, whereas ones that are automatically resolved by the precedence rules are not).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_context_precedence">2.3.2. Context-dependent Precedence</h4>
+<div class="paragraph">
+<p>The precedence of an individual rule can be overriden, using <em class="term">context precedence</em>.
+This is useful when, for example, a particular token has a different precedence depending on the context.
+A common example is the minus sign: it has high precedence when used as prefix negation, but a lower precedence when used as binary subtraction.</p>
+</div>
+<div class="paragraph">
+<p>We can implement this in Happy as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%right in
+%nonassoc '&gt;' '&lt;'
+%left '+' '-'
+%left '*' '/'
+%left NEG
+%%
+
+Exp   : let var '=' Exp in Exp  { Let $2 $4 $6 }
+      | Exp '+' Exp             { Plus $1 $3 }
+      | Exp '-' Exp             { Minus $1 $3 }
+      | Exp '*' Exp             { Times $1 $3 }
+      | Exp '/' Exp             { Div $1 $3 }
+      | '(' Exp ')'             { Brack $2 }
+      | '-' Exp %prec NEG       { Negate $2 }
+      | int                     { Int $1 }
+      | var                     { Var $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>We invent a new token <code>NEG</code> as a placeholder for the precedence of our prefix negation rule.
+The <code>NEG</code> token doesn&#8217;t need to appear in a <code>%token</code> directive.
+The prefix negation rule has a <code>%prec NEG</code> directive attached, which overrides the default precedence for the rule (which would normally be the precedence of '-') with the precedence of <code>NEG</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_shift_directive">2.3.3. The %shift directive for lowest precedence rules</h4>
+<div class="paragraph">
+<p>Rules annotated with the <code>%shift</code> directive have the lowest possible precedence and are non-associative.
+A shift/reduce conflict that involves such a rule is resolved as a shift.
+One can think of <code>%shift</code> as <code>%prec SHIFT</code> such that <code>SHIFT</code> has lower precedence than any other token.</p>
+</div>
+<div class="paragraph">
+<p>This is useful in conjunction with <code>%expect 0</code> to explicitly point out all rules in the grammar that result in conflicts, and thereby resolve such conflicts.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_type_signatures">2.4. Type Signatures</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> allows you to include type signatures in the grammar file itself, to indicate the type of each production.
+This has several benefits:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Documentation: including types in the grammar helps to document the grammar for someone else (and indeed yourself) reading the code.</p>
+</li>
+<li>
+<p>Fixing type errors in the generated module can become slightly easier if <code class="app">Happy</code> has inserted type signatures for you. This is a slightly dubious benefit, since type errors in the generated module are still somewhat difficult to find.</p>
+</li>
+<li>
+<p>Type signatures generally help the Haskell compiler to compile the parser faster. This is important when really large grammar files are being used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The syntax for type signatures in the grammar file is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>stmts   :: { [ Stmt ] }
+stmts   : stmts stmt                { $2 : $1 }
+	| stmt                      { [$1] }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In fact, you can leave out the superfluous occurrence of <code>stmts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>stmts   :: { [ Stmt ] }
+	: stmts stmt                { $2 : $1 }
+	| stmt                      { [$1] }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that currently, you have to include type signatures for <em>all</em> the productions in the grammar to benefit from the second and third points above.
+This is due to boring technical reasons, but it is hoped that this restriction can be removed in the future.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to have productions with polymorphic or overloaded types.
+However, because the type of each production becomes the argument type of a constructor in an algebraic datatype in the generated source file, compiling the generated file requires a compiler that supports local universal quantification.
+GHC (with the <code class="option">-fglasgow-exts</code> option) and Hugs are known to support this.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_monads">2.5. Monadic Parsers</h3>
+<div class="paragraph">
+<p><code class="app">Happy</code> has support for threading a monad through the generated parser.
+This might be useful for several reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Handling parse errors</p>
+<div class="paragraph">
+<p>	  by using an exception monad (see <a href="#_sec_exception">Handling Parse Errors</a>).</p>
+</div>
+</li>
+<li>
+<p>Keeping track of line numbers 	  in the input file, for example for use in error messages (see <a href="#_sec_line_numbers">Line Numbers</a>).</p>
+</li>
+<li>
+<p>Performing IO operations during parsing.</p>
+</li>
+<li>
+<p>Parsing languages with context-dependencies (such as C) require some state in the parser.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Adding monadic support to your parser couldn&#8217;t be simpler.
+Just add the following directive to the declaration section of the grammar file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%monad { &lt;type&gt; } [ { &lt;then&gt; } { &lt;return&gt; } ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>where <code>&lt;type&gt;</code> is the type constructor for the monad, <code>&lt;then&gt;</code> is the bind operation of the monad, and <code>&lt;return&gt;</code> is the return operation.
+If you leave out the names for the bind and return operations, <code class="app">Happy</code> assumes that <code>&lt;type&gt;</code> is an instance of the standard Haskell type class <code>Monad</code> and uses the overloaded names for the bind and return operations.</p>
+</div>
+<div class="paragraph">
+<p>When this declaration is included in the grammar, <code class="app">Happy</code> makes a couple of changes to the generated parser: the types of the main parser function and <code>parseError</code> (the function named in <code>%error</code>) become <code>[Token] &#8594; P a</code> where <code>P</code> is the monad type constructor, and the function must be polymorphic in <code>a</code>.
+In other words, <code class="app">Happy</code> adds an application of the <code>&lt;return&gt;</code> operation defined in the declaration above, around the result of the parser (<code>parseError</code> is affected because it must have the same return type as the parser).  And that&#8217;s all it does.</p>
+</div>
+<div class="paragraph">
+<p>This still isn&#8217;t very useful: all you can do is return something of monadic type from <code>parseError</code>.
+How do you specify that the productions can also have type <code>P a</code>? Most of the time, you don&#8217;t want a production to have this type: you&#8217;d have to write explicit <code>returnP</code>s everywhere.
+However, there may be a few rules in a grammar that need to get at the monad, so <code class="app">Happy</code> has a special syntax for monadic actions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>n  :  t_1 ... t_n          {% &lt;expr&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The <code>%</code> in the action indicates that this is a monadic action, with type <code>P a</code>, where <code>a</code> is the real return type of the production.
+When <code class="app">Happy</code> reduces one of these rules, it evaluates the expression</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;expr&gt; `then` \result -&gt; &lt;continue parsing&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> uses <code>result</code> as the real semantic value of the production.
+During parsing, several monadic actions might be reduced, resulting in a sequence like</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;expr1&gt; `then` \r1 -&gt;
+&lt;expr2&gt; `then` \r2 -&gt;
+...
+return &lt;expr3&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The monadic actions are performed in the order that they are <em>reduced</em>.
+If we consider the parse as a tree, then reductions happen in a depth-first left-to-right manner.
+The great thing about adding a monad to your parser is that it doesn&#8217;t impose any performance overhead for normal reductions - only the monadic ones are translated like this.</p>
+</div>
+<div class="paragraph">
+<p>Take a look at the Haskell parser for a good illustration of how to use a monad in your parser: it contains examples of all the principles discussed in this section, namely parse errors, a threaded lexer, line/column numbers, and state communication between the parser and lexer.</p>
+</div>
+<div class="paragraph">
+<p>The following sections consider a couple of uses for monadic parsers, and describe how to also thread the monad through the lexical analyser.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_exception">2.5.1. Handling Parse Errors</h4>
+<div class="paragraph">
+<p>It&#8217;s not very convenient to just call <code>error</code> when a parse error is detected: in a robust setting, you&#8217;d like the program to recover gracefully and report a useful error message to the user.
+Exceptions (of which errors are a special case) are normally implemented in Haskell by using an exception monad, something like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data E a = Ok a | Failed String
+
+thenE :: E a -&gt; (a -&gt; E b) -&gt; E b
+m `thenE` k =
+   case m of
+       Ok a     -&gt; k a
+       Failed e -&gt; Failed e
+
+returnE :: a -&gt; E a
+returnE a = Ok a
+
+failE :: String -&gt; E a
+failE err = Failed err
+
+catchE :: E a -&gt; (String -&gt; E a) -&gt; E a
+catchE m k =
+   case m of
+      Ok a     -&gt; Ok a
+      Failed e -&gt; k e</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This monad just uses a string as the error type.
+The functions <code>thenE</code> and <code>returnE</code> are the usual bind and return operations of the monad, <code>failE</code> raises an error, and <code>catchE</code> is a combinator for handling exceptions.</p>
+</div>
+<div class="paragraph">
+<p>We can add this monad to the parser with the declaration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%monad { E } { thenE } { returnE }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, without changing the grammar, we can change the definition of <code>parseError</code> and have something sensible happen for a parse error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parseError tokens = failE "Parse error"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The parser now raises an exception in the monad instead of bombing out on a parse error.</p>
+</div>
+<div class="paragraph">
+<p>We can also generate errors during parsing.
+There are times when it is more convenient to parse a more general language than that which is actually intended, and check it later.
+An example comes from Haskell, where the precedence values in infix declarations must be between 0 and 9:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>prec :: { Int }
+      : int    {% if $1 &lt; 0 || $1 &gt; 9
+	                then failE "Precedence out of range"
+		        else returnE $1
+		}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The monadic action allows the check to be placed in the parser itself, where it belongs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_lexers">2.5.2. Threaded Lexers</h4>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> allows the monad concept to be extended to the lexical analyser, too.
+This has several useful consequences:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lexical errors can be treated in the same way as parse errors, using an exception monad.</p>
+</li>
+<li>
+<p>Information such as the current file and line number can be communicated between the lexer and parser.</p>
+</li>
+<li>
+<p>General state communication between the parser and lexer - for example, implementation of the Haskell layout rule requires this kind of interaction.</p>
+</li>
+<li>
+<p>IO operations can be performed in the lexer - this could be useful for following import/include declarations for instance.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A monadic lexer is requested by adding the following declaration to the grammar file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%lexer { &lt;lexer&gt; } { &lt;eof&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>where <code>&lt;lexer&gt;</code> is the name of the lexical analyser function, and <code>&lt;eof&gt;</code> is a token that is to be treated as the end of file.</p>
+</div>
+<div class="paragraph">
+<p>When using a monadic lexer, the parser no longer reads a list of tokens.
+Instead, it calls the lexical analysis function for each new token to be read.
+This has the side effect of eliminating the intermediate list of tokens, which is a slight performance win.</p>
+</div>
+<div class="paragraph">
+<p>The type of the main parser function is now just <code>P a</code> - the input is being handled completely within the monad.</p>
+</div>
+<div class="paragraph">
+<p>The type of <code>parseError</code> becomes <code>Token &#8594; P a</code>; that is it takes Happy&#8217;s current lookahead token as input.
+This can be useful, because the error function probably wants to report the token at which the parse error occurred, and otherwise the lexer would have to store this token in the monad.</p>
+</div>
+<div class="paragraph">
+<p>The lexical analysis function must have the following type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>lexer :: (Token -&gt; P a) -&gt; P a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>P</code> is the monad type constructor declared with <code>%monad</code>, and <code>a</code> can be replaced by the parser return type if desired.</p>
+</div>
+<div class="paragraph">
+<p>You can see from this type that the lexer takes a <em>continuation</em> as an argument.
+The lexer is to find the next token, and pass it to this continuation to carry on with the parse.
+Obviously, we need to keep track of the input in the monad somehow, so that the lexer can do something different each time it&#8217;s called!</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take the exception monad above, and extend it to add the input string so that we can use it with a threaded lexer.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data ParseResult a = Ok a | Failed String
+type P a = String -&gt; ParseResult a
+
+thenP :: P a -&gt; (a -&gt; P b) -&gt; P b
+m `thenP` k = \s -&gt;
+   case m s of
+       Ok a     -&gt; k a s
+       Failed e -&gt; Failed e
+
+returnP :: a -&gt; P a
+returnP a = \s -&gt; Ok a
+
+failP :: String -&gt; P a
+failP err = \s -&gt; Failed err
+
+catchP :: P a -&gt; (String -&gt; P a) -&gt; P a
+catchP m k = \s -&gt;
+   case m s of
+      Ok a     -&gt; Ok a
+      Failed e -&gt; k e s</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that this isn&#8217;t a real state monad - the input string just gets passed around, not returned.
+Our lexer will now look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>lexer :: (Token -&gt; P a) -&gt; P a
+lexer cont s =
+    ... lexical analysis code ...
+    cont token s'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>the lexer grabs the continuation and the input string, finds the next token <code>token</code>, and passes it together with the remaining input string <code>s'</code> to the continuation.</p>
+</div>
+<div class="paragraph">
+<p>We can now indicate lexical errors by ignoring the continuation and calling <code>failP "error message" s</code> within the lexer (don&#8217;t forget to pass the input string to make the types work out).</p>
+</div>
+<div class="paragraph">
+<p>This may all seem a bit weird.
+Why, you ask, doesn&#8217;t the lexer just have type <code>P Token</code>?  It was done this way for performance reasons - this formulation sometimes means that you can use a reader monad instead of a state monad for <code>P</code>, and the reader monad might be faster.
+It&#8217;s not at all clear that this reasoning still holds (or indeed ever held), and it&#8217;s entirely possible that the use of a continuation here is just a misfeature.</p>
+</div>
+<div class="paragraph">
+<p>If you want a lexer of type <code>P Token</code>, then just define a wrapper to deal with the continuation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>lexwrap :: (Token -&gt; P a) -&gt; P a
+lexwrap cont = real_lexer `thenP` \token -&gt; cont token</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monadic_productions_with_lexer">Monadic productions with %lexer</h5>
+<div class="paragraph">
+<p>The <code>{% &#8230;&#8203; }</code> actions work fine with <code>%lexer</code>, but additionally there are two more forms which are useful in certain cases.
+Firstly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>n  :  t_1 ... t_n          {%^ &lt;expr&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, <code>&lt;expr&gt;</code> has type <code>Token &#8594; P a</code>.
+That is, Happy passes the current lookahead token to the monadic action <code>&lt;expr&gt;</code>.
+This is a useful way to get hold of Happy&#8217;s current lookahead token without having to store it in the monad.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>n  :  t_1 ... t_n          {%% &lt;expr&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is a slight variant on the previous form.
+The type of <code>&lt;expr&gt;</code> is the same, but in this case the lookahead token is actually discarded and a new token is read from the input.
+This can be useful when you want to change the next token and continue parsing.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_line_numbers">2.5.3. Line Numbers</h4>
+<div class="paragraph">
+<p>
+</p>
+</div>
+<div class="paragraph">
+<p>Previous versions of <code class="app">Happy</code> had a <code>%newline</code> directive that enabled simple line numbers to be counted by the parser and referenced in the actions.
+We warned you that this facility may go away and be replaced by something more general, well guess what? :-)</p>
+</div>
+<div class="paragraph">
+<p>Line numbers can now be dealt with quite straightforwardly using a monadic parser/lexer combination.
+Ok, we have to extend the monad a bit more:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>type LineNumber = Int
+type P a = String -&gt; LineNumber -&gt; ParseResult a
+
+getLineNo :: P LineNumber
+getLineNo = \s l -&gt; Ok l</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(the rest of the functions in the monad follow by just adding the extra line number argument in the same way as the input string).  Again, the line number is just passed down, not returned: this is OK because of the continuation-based lexer that can change the line number and pass the new one to the continuation.</p>
+</div>
+<div class="paragraph">
+<p>The lexer can now update the line number as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>lexer cont s =
+  case s of
+     '\n':s  -&gt;  \line -&gt; lexer cont s (line + 1)
+     ... rest of lexical analysis ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s as simple as that.
+Take a look at <code class="app">Happy</code>'s own parser if you have the sources lying around, it uses a monad just like the one above.</p>
+</div>
+<div class="paragraph">
+<p>Reporting the line number of a parse error is achieved by changing <code>parseError</code> to look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parseError :: Token -&gt; P a
+parseError = getLineNo `thenP` \line -&gt;
+             failP (show line ++ ": parse error")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can also get hold of the line number during parsing, to put it in the parsed data structure for future reference.
+A good way to do this is to have a production in the grammar that returns the current line number:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>lineno :: { LineNumber }
+        : {- empty -}      {% getLineNo }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The semantic value of <code>lineno</code> is the line number of the last token read - this will always be the token directly following the <code>lineno</code> symbol in the grammar, since <code class="app">Happy</code> always keeps one lookahead token in reserve.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_monad_summary">2.5.4. Summary</h4>
+<div class="paragraph">
+<p>The types of various functions related to the parser are dependent on what combination of <code>%monad</code> and <code>%lexer</code> directives are present in the grammar.
+For reference, we list those types here.
+In the following types, <em>t</em> is the return type of the parser.
+A type containing a type variable indicates that the specified function must be polymorphic.
+
+</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>No <code>&percnt;monad</code> or <code>&percnt;lexer</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parse      :: [Token] -&gt; t
+parseError :: [Token] -&gt; a</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>with <code>%monad</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parse      :: [Token] -&gt; P t
+parseError :: [Token] -&gt; P a</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>with <code>%lexer</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parse      :: T t
+parseError :: Token -&gt; T a
+lexer      :: (Token -&gt; T a) -&gt; T a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where the type constructor <code>T</code> is whatever you want (usually <code>T
+a = String &#8594; a</code>).  I&#8217;m not sure if this is useful, or even if it works properly.
+* </p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>with <code>%monad</code> and <code>%lexer</code></p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>parse      :: P t
+parseError :: Token -&gt; P a
+lexer      :: (Token -&gt; P a) -&gt; P a</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_error">2.6. The Error Token</h3>
+<div class="paragraph">
+<p><code class="app">Happy</code> supports a limited form of error recovery, using the special symbol <code>error</code> in a grammar file.
+When <code class="app">Happy</code> finds a parse error during parsing, it automatically inserts the <code>error</code> symbol; if your grammar deals with <code>error</code> explicitly, then it can detect the error and carry on.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <code class="app">Happy</code> grammar for Haskell uses error recovery to implement Haskell layout.
+The grammar has a rule that looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>close : '}'                  { () }
+      | error		     { () }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This says that a close brace in a layout-indented context may be either a curly brace (inserted by the lexical analyser), or a parse error.</p>
+</div>
+<div class="paragraph">
+<p>This rule is used to parse expressions like <code>let x
+      = e in e'</code>: the layout system inserts an open brace before <code>x</code>, and the occurrence of the <code>in</code> symbol generates a parse error, which is interpreted as a close brace by the above rule.
+</p>
+</div>
+<div class="paragraph">
+<p>Note for <code>yacc</code> users: this form of error recovery is strictly more limited than that provided by <code>yacc</code>.
+During a parse error condition, <code>yacc</code> attempts to discard states and tokens in order to get back into a state where parsing may continue; <code class="app">Happy</code> doesn&#8217;t do this.
+The reason is that normal <code>yacc</code> error recovery is notoriously hard to describe, and the semantics depend heavily on the workings of a shift-reduce parser.
+Furthermore, different implementations of <code>yacc</code> appear to implement error recovery differently. <code class="app">Happy</code>'s limited error recovery on the other hand is well-defined, as is just sufficient to implement the Haskell layout rule (which is why it was added in the first place).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_multiple_parsers">2.7. Generating Multiple Parsers From a Single Grammar</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>It is often useful to use a single grammar to describe multiple parsers, where each parser has a different top-level non-terminal, but parts of the grammar are shared between parsers.
+A classic example of this is an interpreter, which needs to be able to parse both entire files and single expressions: the expression grammar is likely to be identical for the two parsers, so we would like to use a single grammar but have two entry points.</p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> lets you do this by allowing multiple <code>%name</code> directives in the grammar file.
+The <code>%name</code> directive takes an optional second parameter specifying the top-level non-terminal for this parser, so we may specify multiple parsers like so:
+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%name parse1 non-terminal1
+%name parse2 non-terminal2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> will generate from this a module which defines two functions <code>parse1</code> and <code>parse2</code>, which parse the grammars given by <code>non-terminal1</code> and <code>non-terminal2</code> respectively.
+Each parsing function will of course have a different type, depending on the type of the appropriate non-terminal.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_glr">3. Generalized LR Parsing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains how to use the GLR parsing extension, which allows <code class="app">Happy</code> to parse ambiguous grammars and produce useful results.
+This extension is triggered with the <code class="option">--glr</code> flag, which causes <code class="app">Happy</code> to use a different driver for the LALR(1) parsing tables.
+The result of parsing is a structure which encodes compactly <em>all</em> of the possible parses.
+There are two options for how semantic information is combined with the structural information.</p>
+</div>
+<div class="paragraph">
+<p>This extension was developed by Paul Callaghan and Ben Medlock (University of Durham). It is based on the structural parser implemented in Medlock&#8217;s undergraduate project, but significantly extended and improved by Callaghan.
+Bug reports, comments, questions etc should be sent to <a href="mailto:P.C.Callaghan@durham.ac.uk">P.C.Callaghan@durham.ac.uk</a>.
+Further information can be found on Callaghan&#8217;s <a href="http://www.dur.ac.uk/p.c.callaghan/happy-glr">GLR parser
+    page</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_sec_glr_intro">3.1. Introduction</h3>
+<div class="paragraph">
+<p>Here&#8217;s an ambiguous grammar.
+It has no information about the associativity of <code>\+</code>, so for example, <code>1+2+3</code> can be parsed as <code>(1+(2+3))</code> or <code>((1+2)+3)</code>.
+In conventional mode, <code class="app">Happy</code>, would complain about a shift/reduce conflict, although it would generate a parser which always shifts in such a conflict, and hence would produce <em>only</em> the first alternative above.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>E -&gt; E + E
+E -&gt; i       -- any integer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GLR parsing will accept this grammar without complaint, and produce a result which encodes <em>both</em> alternatives simultaneously.
+Now consider the more interesting example of <code>1+2+3+4</code>, which has five distinct parses&#8201;&#8212;&#8201;try to list them! You will see that some of the subtrees are identical.
+A further property of the GLR output is that such sub-results are shared, hence efficiently represented: there is no combinatorial explosion.
+Below is the simplified output of the GLR parser for this example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Root (0,7,G_E)
+(0,1,G_E)     =&gt; [[(0,1,Tok '1'))]]
+(0,3,G_E)     =&gt; [[(0,1,G_E),(1,2,Tok '+'),(2,3,G_E)]]
+(0,5,G_E)     =&gt; [[(0,1,G_E),(1,2,Tok '+'),(2,5,G_E)]
+                  ,[(0,3,G_E),(3,4,Tok '+'),(4,5,G_E)]]
+(0,7,G_E)     =&gt; [[(0,3,G_E),(3,4,Tok '+'),(4,7,G_E)]
+                  ,[(0,1,G_E),(1,2,Tok '+'),(2,7,G_E)]
+                  ,[(0,5,G_E),(5,6,Tok '+'),(6,7,G_E)]}]
+(2,3,G_E)     =&gt; [[(2,3,Tok '2'))]}]
+(2,5,G_E)     =&gt; [[(2,3,G_E),(3,4,Tok '+'),(4,5,G_E)]}]
+(2,7,G_E)     =&gt; [[(2,3,G_E),(3,4,Tok '+'),(4,7,G_E)]}
+                  ,[(2,5,G_E),(5,6,Tok '+'),(6,7,G_E)]}]
+(4,5,G_E)     =&gt; [[(4,5,Tok '3'))]}]
+(4,7,G_E)     =&gt; [[(4,5,G_E),(5,6,Tok '+'),(6,7,G_E)]}]
+(6,7,G_E)     =&gt; [[(6,7,Tok '4'))]}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is a directed, acyclic and-or graph.
+The node "names" are of form <code>(a,b,c)</code> where <code>a</code> and <code>b</code> are the start and end points (as positions in the input string) and <code>c</code> is a category (or name of grammar rule). For example <code>(2,7,G_E)</code> spans positions 2 to 7 and contains analyses which match the <code>E</code> grammar rule.
+Such analyses are given as a list of alternatives (disjunctions), each corresponding to some use of a production of that category, which in turn are a conjunction of sub-analyses, each represented as a node in the graph or an instance of a token.</p>
+</div>
+<div class="paragraph">
+<p>Hence <code>(2,7,G_E)</code> contains two alternatives, one which has <code>(2,3,G_E)</code> as its first child and the other with <code>(2,5,G_E)</code> as its first child, respectively corresponding to sub-analyses <code>(2+(3+4))</code> and <code>((2+3)+4)</code>.
+Both alternatives have the token <code>\+</code> as their second child, but note that they are difference occurrences of <code>\+</code> in the input! We strongly recommend looking at such results in graphical form to understand these points.
+If you build the <code>expr-eval</code> example in the directory <code>examples/glr</code> (NB you need to use GHC for this, unless you know how to use the <code class="option">-F</code> flag for Hugs), running the example will produce a file which can be viewed with the <em>daVinci</em> graph visualization tool.
+(See <a href="http://www.informatik.uni-bremen.de/~davinci/" class="bare">http://www.informatik.uni-bremen.de/~davinci/</a> for more information.
+Educational use licenses are currently available without charge.)</p>
+</div>
+<div class="paragraph">
+<p>The GLR extension also allows semantic information to be attached to productions, as in conventional <code class="app">Happy</code>, although there are further issues to consider.
+Two modes are provided, one for simple applications and one for more complex use.
+See <a href="#_sec_glr_semantics">Including semantic results</a>.
+The extension is also integrated with <code class="app">Happy</code>'s token handling, e.g.
+extraction of information from tokens.</p>
+</div>
+<div class="paragraph">
+<p>One key feature of this implementation in Haskell is that its main result is a <em>graph</em>.
+Other implementations effectively produce a list of trees, but this limits practical use to small examples.
+For large and interesting applications, some of which are discussed in <a href="#_sec_glr_misc_applications">Some Applications of GLR parsing</a>, a graph is essential due to the large number of possibilities and the need to analyse the structure of the ambiguity.
+Converting the graph to trees could produce huge numbers of results and will lose information about sharing etc.</p>
+</div>
+<div class="paragraph">
+<p>One final comment.
+You may have learnt through using <code class="app">yacc</code>-style tools that ambiguous grammars are to be avoided, and that ambiguity is something that appears only in Natural Language processing.
+This is definitely not true.
+Many interesting grammars are ambiguous, and with GLR tools they can be used effectively.
+We hope you enjoy exploring this fascinating area!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_glr_using">3.2. Basic use of a Happy-generated GLR parser</h3>
+<div class="paragraph">
+<p>This section explains how to generate and to use a GLR parser to produce structural results.
+Please check the examples for further information.
+Discussion of semantic issues comes later; see <a href="#_sec_glr_semantics">Including semantic results</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_using_intro">3.2.1. Overview</h4>
+<div class="paragraph">
+<p>The process of generating a GLR parser is broadly the same as for standard <code class="app">Happy</code>.
+You write a grammar specification, run <code class="app">Happy</code> on this to generate some Haskell code, then compile and link this into your program.</p>
+</div>
+<div class="paragraph">
+<p>An alternative to using Happy directly is to use the <a href="http://www.cs.chalmers.se/~markus/BNFC/">
+	BNF Converter</a> tool by Markus Forsberg, Peter Gammie, Michael Pellauer and Aarne Ranta.
+This tool creates an abstract syntax, grammar, pretty-printer and other useful items from a single grammar formalism, thus it saves a lot of work and improves maintainability.
+The current output of BNFC can be used with GLR mode now with just a few small changes, but from January 2005 we expect to have a fully-compatible version of BNFC.</p>
+</div>
+<div class="paragraph">
+<p>Most of the features of <code class="app">Happy</code> still work, but note the important points below.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">module header</dt>
+<dd>
+<p>The GLR parser is generated in TWO files, one for data and one for the driver.
+This is because the driver code needs to be optimized, but for large parsers with lots of data, optimizing the data tables too causes compilation to be too slow.</p>
+<div class="paragraph">
+<p>Given a file <code>Foo.y</code>, the file <code>FooData.hs</code>, containing the data module, is generated with basic type information, the parser tables, and the header and tail code that was included in the parser specification.
+Note that <code class="app">Happy</code> can automatically generate the necessary module declaration statements, if you do not choose to provide one in the grammar file.
+But, if you do choose to provide the module declaration statement, then the name of the module will be parsed and used as the name of the driver module.
+The parsed name will also be used to form the name of the data module, but with the string <code>Data</code> appended to it.
+The driver module, which is to be found in the file <code>Foo.hs</code>, will not contain any other user-supplied text besides the module name.
+Do not bother to supply any export declarations in your module declaration statement: they will be ignored and dropped, in favor of the standard export declaration.</p>
+</div>
+</dd>
+<dt class="hdlist1">export of lexer</dt>
+<dd>
+<p>You can declare a lexer (and error token) with the <code>%lexer</code> directive as normal, but the generated parser does NOT call this lexer automatically.
+The action of the directive is only to <em>export</em> the lexer function to the top level.
+This is because some applications need finer control of the lexing process.</p>
+</dd>
+<dt class="hdlist1">precedence information</dt>
+<dd>
+<p>This still works, but note the reasons.
+The precedence and associativity declarations are used in <code class="app">Happy</code>'s LR table creation to resolve certain conflicts.
+It does this by retaining the actions implied by the declarations and removing the ones which clash with these.
+The GLR parser back-end then produces code from these filtered tables, hence the rejected actions are never considered by the GLR parser.</p>
+<div class="paragraph">
+<p>Hence, declaring precedence and associativity is still a good thing, since it avoids a certain amount of ambiguity that the user knows how to remove.</p>
+</div>
+</dd>
+<dt class="hdlist1">monad directive</dt>
+<dd>
+<p>There is some support for monadic parsers.
+The "tree decoding" mode (see <a href="#_sec_glr_semantics_tree">Tree decoding</a>) can use the information given in the <code>%monad</code>	       declaration to monadify the decoding process.
+This is explained in more detail in <a href="#_sec_glr_semantics_tree_monad">Monadic tree decoding</a>.</p>
+<div class="paragraph">
+<p><em>Note</em>: the generated parsers don&#8217;t include Ashley Yakeley&#8217;s monad context information yet.
+It is currently just ignored.
+If this is a problem, email and I&#8217;ll make the changes required.</p>
+</div>
+</dd>
+<dt class="hdlist1">parser name directive</dt>
+<dd>
+<p>This has no effect at present.
+It will probably remain this way: if you want to control names, you could use qualified import.</p>
+</dd>
+<dt class="hdlist1">type information on non-terminals</dt>
+<dd>
+<p>The generation of semantic code relies on type information given in the grammar specification.
+If you don&#8217;t give an explicit signature, the type <code>()</code> is assumed.
+If you get type clashes mentioning <code>()</code> you may need to add type annotations.
+Similarly, if you don&#8217;t supply code for the semantic rule portion, then the value <code>()</code> is used.</p>
+</dd>
+<dt class="hdlist1"><code>error</code> symbol in grammars, and recovery</dt>
+<dd>
+<p>No attempt to implement this yet.
+Any use of <code>error</code> in grammars is thus ignored, and parse errors will eventually mean a parse will fail.</p>
+</dd>
+<dt class="hdlist1">the token type</dt>
+<dd>
+<p>The type used for tokens <em>must</em> be in the <code>Ord</code> type class (and hence in <code>Eq</code>), plus it is recommended that they are in the <code>Show</code> class too.
+The ordering is required for the implementation of ambiguity packing.
+It may be possible to relax this requirement, but it is probably simpler just to require instances of the type classes.
+Please tell us if this is a problem.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_using_main">3.2.2. The main function</h4>
+<div class="paragraph">
+<p>The driver file exports a function <code>doParse :: <a id="UserDefTok"></a> &#8594; GLRResult</code>.
+If you are using several parsers, use qualified naming to distinguish them. <code>UserDefTok</code> is a synonym for the type declared with the <code>%tokentype</code> directive.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_using_input">3.2.3. The input</h4>
+<div class="paragraph">
+<p>The input to <code>doParse</code> is a list of <em>list of</em> token values.
+The outer level represents the sequence of input symbols, and the inner list represents ambiguity in the tokenisation of each input symbol.
+For example, the word "run" can be at least a noun or a verb, hence the inner list will contain at least two values.
+If your tokens are not ambiguous, you will need to convert each token to a singleton list before parsing.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_using_output">3.2.4. The Parse Result</h4>
+<div class="paragraph">
+<p>The parse result is expressed with the following types.
+A successful parse yields a forest (explained below) and a single root node for the forest.
+A parse may fail for one of two reasons: running out of input or a (global) parse error.
+A global parse error means that it was not possible to continue parsing <em>any</em> of the live alternatives; this is different from a local error, which simply means that the current alternative dies and we try some other alternative.
+In both error cases, the forest at failure point is returned, since it may contain useful information.
+Unconsumed tokens are returned when there is a global parse error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>type ForestId = (Int,Int,GSymbol)
+data GSymbol  = &lt;... automatically generated ...&gt;
+type Forest   = FiniteMap ForestId [Branch]
+type RootNode = ForestId
+type Tokens   = [[(Int, GSymbol)]]
+data Branch   = Branch {b_sem :: GSem, b_nodes :: [ForestId]}
+data GSem     = &lt;... automatically generated ...&gt;
+
+data GLRResult
+  = ParseOK     RootNode Forest    -- forest with root
+  | ParseError  Tokens   Forest    -- partial forest with bad input
+  | ParseEOF             Forest    -- partial forest (missing input)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Conceptually, the parse forest is a directed, acyclic and-or graph.
+It is represented by a mapping of <code>ForestId</code>s to lists of possible analyses.
+The <code>FiniteMap</code>	type is used to provide efficient and convenient access.
+The <code>ForestId</code> type identifies nodes in the graph, named by the range of input they span and the category of analysis they license. <code>GSymbol</code> is generated automatically as a union of the names of grammar rules (prefixed by <code>G_</code> to avoid name clashes) and of tokens and an EOF symbol.
+Tokens are wrapped in the constructor <code>HappyTok :: UserDefTok &#8594; GSymbol</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Branch</code> type represents a match for some right-hand side of a production, containing semantic information (see below) and a list of sub-analyses.
+Each of these is a node in the graph.
+Note that tokens are represented as childless nodes that span one input position.
+Empty productions will appear as childless nodes that start and end at the same position.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_using_compiling">3.2.5. Compiling the parser</h4>
+<div class="paragraph">
+<p><code class="app">Happy</code> will generate two files, and these should be compiled as normal Haskell files.
+If speed is an issue, then you should use the <code class="option">-O</code>	flags etc with the driver code, and if feasible, with the parser tables too.</p>
+</div>
+<div class="paragraph">
+<p>You can also use the <code class="option">--ghc</code> flag to trigger certain <code class="app">GHC</code>-specific optimizations.
+At present, this just causes use of unboxed types in the tables and in some key code.
+Using this flag causes relevant <code class="app">GHC</code>	option pragmas to be inserted into the generated code, so you shouldn&#8217;t have to use any strange flags (unless you want to&#8230;&#8203;).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_glr_semantics">3.3. Including semantic results</h3>
+<div class="paragraph">
+<p>This section discusses the options for including semantic information in grammars.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_semantics_intro">3.3.1. Forms of semantics</h4>
+<div class="paragraph">
+<p>Semantic information may be attached to productions in the conventional way, but when more than one analysis is possible, the use of the semantic information must change.
+Two schemes have been implemented, which we call <em>tree decoding</em>	and <em>label decoding</em>.
+The former is for simple applications, where there is not much ambiguity and hence where the effective unpacking of the parse forest isn&#8217;t a factor.
+This mode is quite similar to the standard mode in <code class="app">Happy</code>.
+The latter is for serious applications, where sharing is important and where processing of the forest (eg filtering) is needed.
+Here, the emphasis is about providing rich labels in nodes of the the parse forest, to support such processing.</p>
+</div>
+<div class="paragraph">
+<p>The default mode is labelling.
+If you want the tree decode mode, use the <code class="option">--decode</code> flag.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_semantics_tree">3.3.2. Tree decoding</h4>
+<div class="paragraph">
+<p>Tree decoding corresponds to unpacking the parse forest to individual trees and collecting the list of semantic results computed from each of these.
+It is a mode intended for simple applications, where there is limited ambiguity.
+You may access semantic results from components of a reduction using the dollar variables.
+As a working example, the following is taken from the <code>expr-tree</code> grammar in the examples.
+Note that the type signature is required, else the types in use can&#8217;t be determined by the parser generator.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>E :: {Int} -- type signature needed
+  : E '+' E  { $1 + $3 }
+  | E '*' E  { $1 * $3 }
+  | i        { $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This mode works by converting each of the semantic rules into functions (abstracted over the dollar variables mentioned), and labelling each <code>Branch</code> created from a reduction of that rule with the function value.
+This amounts to <em>delaying</em> the action of the rule, since we must wait until we know the results of all of the sub-analyses before computing any of the results.
+(Certain cases of packing can add new analyses at a later stage.)</p>
+</div>
+<div class="paragraph">
+<p>At the end of parsing, the functions are applied across relevant sub-analyses via a recursive descent.
+The main interface to this is via the class and entry function below.
+Typically, <code>decode</code> should be called on the root of the forest, also supplying a function which maps node names to their list of analyses (typically a partial application of lookup in the forest value). The result is a list of semantic values.
+Note that the context of the call to <code>decode</code>	should (eventually) supply a concrete type to allow selection of appropriate instance.
+Ie, you have to indicate in some way what type the semantic result should have. <code>Decode_Result a</code> is a synonym generated by <code class="app">Happy</code>: for non-monadic semantics, it is equivalent to <code>a</code>; when monads are in use, it becomes the declared monad type.
+See the full <code>expr-eval</code> example for more information.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class TreeDecode a where
+        decode_b :: (ForestId -&gt; [Branch]) -&gt; Branch -&gt; [Decode_Result a]
+decode :: TreeDecode a =&gt; (ForestId -&gt; [Branch]) -&gt; ForestId -&gt; [Decode_Result a]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The GLR parser generator identifies the types involved in each semantic rule, hence the types of the functions, then creates a union containing distinct types.
+Values of this union are stored in the branches.
+(The union is actually a bit more complex: it must also distinguish patterns of dollar-variable usage, eg a function <code>\x y &#8594; x + y ` could be applied to the first and second constituents, or to the first and third.) The parser generator also creates instances of the `TreeDecode</code> class, which unpacks the semantic function and applies it across the decodings of the possible combinations of children.
+Effectively, it does a cartesian product operation across the lists of semantic results from each of the children.
+Eg <code>[1,2] "+" [3,4]</code> produces <code>[4,5,5,6]</code>.
+Information is extracted from token values using the patterns supplied by the user when declaring tokens and their Haskell representation, so the dollar-dollar convention works also.</p>
+</div>
+<div class="paragraph">
+<p>The decoding process could be made more efficient by using memoisation techniques, but this hasn&#8217;t been implemented since we believe the other (label) decoding mode is more useful.
+(If someone sends in a patch, we may include it in a future release&#8201;&#8212;&#8201;but this might be tricky, eg require higher-order polymorphism? Plus, are there other ways of using this form of semantic function?)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_semantics_label">3.3.3. Label decoding</h4>
+<div class="paragraph">
+<p>The labelling mode aims to label branches in the forest with information that supports subsequent processing, for example the filtering and prioritisation of analyses prior to extraction of favoured solutions.
+As above, code fragments are given in braces and can contain dollar-variables.
+But these variables are expanded to node names in the graph, with the intention of easing navigation.
+The following grammar is from the <code>expr-tree</code>	example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>E :: {Tree ForestId Int}
+  : E '+' E      { Plus  $1 $3 }
+  | E '*' E      { Times $1 $3 }
+  | i            { Const $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, the semantic values provide more meaningful labels than the plain structural information.
+In particular, only the interesting parts of the branch are represented, and the programmer can clearly select or label the useful constituents if required.
+There is no need to remember that it is the first and third child in the branch which we need to extract, because the label only contains those values (the <code>noise' has been dropped). Consider also the difference between concrete and abstract syntax.
+The labels are oriented towards abstract syntax.
+Tokens are handled slightly differently here: when they appear as children in a reduction, their informational content can be extracted directly, hence the `Const</code> value above will be built with the <code>Int</code> value from the token, not some <code>ForestId</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note the useful technique of making the label types polymorphic in the position used for forest indices.
+This allows replacement at a later stage with more appropriate values, eg.
+inserting lists of actual subtrees from the final decoding.</p>
+</div>
+<div class="paragraph">
+<p>Use of these labels is supported by a type class <code>LabelDecode</code>, which unpacks values of the automatically-generated union type <code>GSem</code>	to the original type(s). The parser generator will create appropriate instances of this class, based on the type information in the grammar file.
+(Note that omitting type information leads to a default of <code>()</code>.) Observe that use of the labels is often like traversing an abstract syntax, and the structure of the abstract syntax type usually constrains the types of constituents; so once the overall type is fixed (eg.
+with a type cast or signature) then there are no problems with resolution of class instances.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>class LabelDecode a where
+        unpack :: GSem -&gt; a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Internally, the semantic values are packed in a union type as before, but there is no direct abstraction step.
+Instead, the <code>ForestId</code> values (from the dollar-variables) are bound when the corresponding branch is created from the list of constituent nodes.
+At this stage, token information is also extracted, using the patterns supplied by the user when declaring the tokens.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_semantics_tree_monad">3.3.4. Monadic tree decoding</h4>
+<div class="paragraph">
+<p>You can use the <code>%monad</code> directive in the tree-decode mode.
+Essentially, the decoding process now creates a list of monadic values, using the monad type declared in the directive.
+The default handling of the semantic functions is to apply the relevant <code>return</code> function to the value being returned.
+You can over-ride this using the <code>{% &#8230;&#8203; }</code>	convention.
+The declared <code>(&gt;&gt;=)</code> function is used to assemble the computations.</p>
+</div>
+<div class="paragraph">
+<p>Note that no attempt is made to share the results of monadic computations from sub-trees.
+(You could possibly do this by supplying a memoising lookup function for the decoding process.) Hence, the usual behaviour is that decoding produces whole monadic computations, each part of which is computed afresh (in depth-first order) when the whole is computed.
+Hence you should take care to initialise any relevant state before computing the results from multiple solutions.</p>
+</div>
+<div class="paragraph">
+<p>This facility is experimental, and we welcome comments or observations on the approach taken! An example is provided (<code>examples/glr/expr-monad</code>). It is the standard example of arithmetic expressions, except that the <code>IO</code> monad is used, and a user exception is thrown when the second argument to addition is an odd number.
+Running this example will show a zero (from the exception handler) instead of the expected number amongst the results from the other parses.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_glr_misc">3.4. Further information</h3>
+<div class="paragraph">
+<p>Other useful information&#8230;&#8203;</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_examples">3.4.1. The GLR examples</h4>
+<div class="paragraph">
+<p>The directory <code>examples/glr</code> contains several examples from the small to the large.
+Please consult these or use them as a base for your experiments.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_graphs">3.4.2. Viewing forests as graphs</h4>
+<div class="paragraph">
+<p>If you run the examples with <code class="app">GHC</code>, each run will produce a file <code>out.daVinci</code>.
+This is a graph in the format expected by the <em>daVinci</em>	graph visualization tool.
+(See <a href="http://www.informatik.uni-bremen.de/~davinci/" class="bare">http://www.informatik.uni-bremen.de/~davinci/</a>	for more information.
+Educational use licenses are currently available without charge.)</p>
+</div>
+<div class="paragraph">
+<p>We highly recommend looking at graphs of parse results - it really helps to understand the results.
+The graphs files are created with Sven Panne&#8217;s library for communicating with <em>daVinci</em>, supplemented with some extensions due to Callaghan.
+Copies of this code are included in the examples directory, for convenience.
+If you are trying to view large and complex graphs, contact Paul Callaghan (there are tools and techniques to make the graphs more manageable).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_applications">3.4.3. Some Applications of GLR parsing</h4>
+<div class="paragraph">
+<p>GLR parsing (and related techniques) aren&#8217;t just for badly written grammars or for things like natural language (NL) where ambiguity is inescapable.
+There are applications where ambiguity can represent possible alternatives in pattern-matching tasks, and the flexibility of these parsing techniques and the resulting graphs support deep analyses.
+Below, we briefly discuss some examples, a mixture from our recent work and from the literature.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Gene sequence analysis</dt>
+<dd>
+<p>Combinations of structures within gene sequences can be expressed as a grammar, for example a "start" combination followed by a "promoter" combination then the gene proper.
+A recent undergraduate project has used this GLR implementation to detect candiate matches in data, and then to filter these matches with a mixture of local and global information.</p>
+</dd>
+<dt class="hdlist1">Rhythmic structure in poetry</dt>
+<dd>
+<p>Rhythmic patterns in (English) poetry obey certain rules, and in more modern poetry can break rules in particular ways to achieve certain effects.
+The standard rhythmic patterns (eg.
+iambic pentameter) can be encoded as a grammar, and deviations from the patterns also encoded as rules.
+The neutral reading can be parsed with this grammar, to give a forest of alternative matches.
+The forest can be analysed to give a preferred reading, and to highlight certain technical features of the poetry.
+An undergraduate project in Durham has used this implementation for this purpose, with promising results.</p>
+</dd>
+<dt class="hdlist1">Compilers&#8201;&#8212;&#8201;instruction selection</dt>
+<dd>
+<p>Recent work has phrased the translation problem in compilers from intermediate representation to an instruction set for a given processor as a matching problem.
+Different constructs at the intermediate level can map to several combinations of machine instructions.
+This knowledge can be expressed as a grammar, and instances of the problem solved by parsing.
+The parse forest represents competing solutions, and allows selection of optimum solutions according to various measures.</p>
+</dd>
+<dt class="hdlist1">Robust parsing of ill-formed input</dt>
+<dd>
+<p>The extra flexibility of GLR parsing can simplify parsing of formal languages where a degree of `informality' is allowed.
+For example, Html parsing.
+Modern browsers contain complex parsers which are designed to try to extract useful information from Html text which doesn&#8217;t follow the rules precisely, eg missing start tags or missing end tags.
+Html with missing tags can be written as an ambiguous grammar, and it should be a simple matter to extract a usable interpretation from a forest of parses.
+Notice the technique: we widen the scope of the grammar, parse with GLR, then extract a reasonable solution.
+This is arguably simpler than pushing an LR(1) or LL(1) parser past its limits, and also more maintainable.</p>
+</dd>
+<dt class="hdlist1">Natural Language Processing</dt>
+<dd>
+<p>Ambiguity is inescapable in the syntax of most human languages.
+In realistic systems, parse forests are useful to encode competing analyses in an efficient way, and they also provide a framework for further analysis and disambiguation.
+Note that ambiguity can have many forms, from simple phrase attachment uncertainty to more subtle forms involving mixtures of word senses.
+If some degree of ungrammaticality is to be tolerated in a system, which can be done by extending the grammar with productions incorporating common forms of infelicity, the degree of ambiguity increases further.
+For systems used on arbitrary text, such as on newspapers, it is not uncommon that many sentences permit several hundred or more analyses.
+With such grammars, parse forest techniques are essential.
+Many recent NLP systems use such techniques, including the Durham&#8217;s earlier LOLITA system - which was mostly written in Haskell.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_workings">3.4.4. Technical details</h4>
+<div class="paragraph">
+<p>The original implementation was developed by Ben Medlock, as his undergraduate final year project, using ideas from Peter Ljungloef&#8217;s Licentiate thesis (see <a href="http://www.cs.chalmers.se/~peb/parsing" class="bare">http://www.cs.chalmers.se/~peb/parsing</a>, and we recommend the thesis for its clear analysis of parsing algorithms). Ljungloef&#8217;s version produces lists of parse trees, but Medlock adapted this to produce an explicit graph containing parse structure information.
+He also incorporated the code into <code class="app">Happy</code>.</p>
+</div>
+<div class="paragraph">
+<p>After Medlock&#8217;s graduation, Callaghan extended the code to incorporate semantic information, and made several improvements to the original code, such as improved local packing and support for hidden left recursion.
+The performance of the code was significantly improved, after changes of representation (eg to a chart-style data structure) and technique.
+Medlock&#8217;s code was also used in several student projects, including analysis of gene sequences (Fischer) and analysis of rhythmic patterns in poetry (Henderson).</p>
+</div>
+<div class="paragraph">
+<p>The current code implements the standard GLR algorithm extended to handle hidden left recursion.
+Such recursion, as in the grammar below from Rekers [1992], causes the standard algorithm to loop because the empty reduction <code>A &#8594; ` is always possible and the LR parser will not change state.
+Alternatively, there is a problem because an unknown (at the start of parsing) number of `A</code>	items are required, to match the number of <code>i</code>	tokens in the input.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>S -&gt; A Q i | +
+A -&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The solution to this is not surprising.
+Problematic recursions are detected as zero-span reductions in a state which has a <code>goto</code> table entry looping to itself.
+A special symbol is pushed to the stack on the first such reduction, and such reductions are done at most once for any token alternative for any input position.
+When popping from the stack, if the last token being popped is such a special symbol, then two stack tails are returned: one corresponding to a conventional pop (which removes the symbol) and the other to a duplication of the special symbol (the stack is not changed, but a copy of the symbol is returned). This allows sufficient copies of the empty symbol to appear on some stack, hence allowing the parse to complete.</p>
+</div>
+<div class="paragraph">
+<p>The forest is held in a chart-style data structure, and this supports local ambiguity packing (chart parsing is discussed in Ljungloef&#8217;s thesis, among other places). A limited amount of packing of live stacks is also done, to avoid some repetition of work.</p>
+</div>
+<div class="paragraph">
+<p>[Rekers 1992] Parser Generation for Interactive Environments, PhD thesis, University of Amsterdam, 1992.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_filter">3.4.5. The <code class="option">--filter</code> option</h4>
+<div class="paragraph">
+<p>You might have noticed this GLR-related option.
+It is an experimental feature intended to restrict the amount of structure retained in the forest by discarding everything not required for the semantic results.
+It may or it may not work, and may be fixed in a future release.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_limitations">3.4.6. Limitations and future work</h4>
+<div class="paragraph">
+<p>The parser supports hidden left recursion, but makes no attempt to handle cyclic grammars that have rules which do not consume any input.
+If you have a grammar like this, for example with rules like <code>S &#8594; S</code> or <code>S &#8594; A S | x; A &#8594; empty</code>, the implementation will loop until you run out of stack - but if it will happen, it often happens quite quickly!</p>
+</div>
+<div class="paragraph">
+<p>The code has been used and tested frequently over the past few years, including being used in several undergraduate projects.
+It should be fairly stable, but as usual, can&#8217;t be guaranteed bug-free.
+One day I will write it in Epigram!</p>
+</div>
+<div class="paragraph">
+<p>If you have suggestions for improvements, or requests for features, please contact Paul Callaghan.
+There are some changes I am considering, and some views and/or encouragement from users will be much appreciated.
+Further information can be found on Callaghan&#8217;s <a href="http://www.dur.ac.uk/p.c.callaghan/happy-glr">GLR parser
+	page</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_glr_misc_acknowledgements">3.4.7. Thanks and acknowledgements</h4>
+<div class="paragraph">
+<p>Many thanks to the people who have used and tested this software in its various forms, including Julia Fischer, James Henderson, and Aarne Ranta.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_attributegrammar">4. Attribute Grammars</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sec_introattributegrammars">4.1. Introduction</h3>
+<div class="paragraph">
+<p>Attribute grammars are a formalism for expressing syntax directed translation of a context-free grammar.
+An introduction to attribute grammars may be found <a href="http://www-rocq.inria.fr/oscar/www/fnc2/manual/node32.html">here</a>.
+There is also an article in the Monad Reader about attribute grammars and a different approach to attribute grammars using Haskell <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader/Issue4/Why_Attribute_Grammars_Matter">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>The main practical difficulty that has prevented attribute grammars from gaining widespread use involves evaluating the attributes.
+Attribute grammars generate non-trivial data dependency graphs that are difficult to evaluate using mainstream languages and techniques.
+The solutions generally involve restricting the form of the grammars or using big hammers like topological sorts.
+However, a language which supports lazy evaluation, such as Haskell, has no problem forming complex data dependency graphs and evaluating them.
+The primary intellectual barrier to attribute grammar adoption seems to stem from the fact that most programmers have difficulty with the declarative nature of the specification.
+Haskell programmers, on the other hand, have already embraced a purely functional language.
+In short, the Haskell language and community seem like a perfect place to experiment with attribute grammars.</p>
+</div>
+<div class="paragraph">
+<p>Embedding attribute grammars in Happy is easy because because Haskell supports three important features: higher order functions, labeled records, and lazy evaluation.
+Attributes are encoded as fields in a labeled record.
+The parse result of each non-terminal in the grammar is a function which takes a record of inherited attributes and returns a record of synthesized attributes.
+In each production, the attributes of various non-terminals are bound together using <code>let</code>.
+Finally, at the end of the parse, a distinguished attribute is evaluated to be the final result.
+Lazy evaluation takes care of evaluating each attribute in the correct order, resulting in an attribute grammar system that is capable of evaluating a fairly large class of attribute grammars.</p>
+</div>
+<div class="paragraph">
+<p>Attribute grammars in Happy do not use any language extensions, so the parsers are Haskell 98 (assuming you don&#8217;t use the GHC specific -g option). Currently, attribute grammars cannot be generated for GLR parsers (It&#8217;s not exactly clear how these features should interact&#8230;&#8203;)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_atrributegrammarsinhappy">4.2. Attribute Grammars in Happy</h3>
+<div class="sect3">
+<h4 id="_sec_declaringattributes">4.2.1. Declaring Attributes</h4>
+<div class="paragraph">
+<p>The presence of one or more <code>%attribute</code> directives indicates that a grammar is an attribute grammar.
+Attributes are calculated properties that are associated with the non-terminals in a parse tree.
+Each <code>%attribute</code> directive generates a field in the attributes record with the given name and type.</p>
+</div>
+<div class="paragraph">
+<p>The first <code>%attribute</code> directive in a grammar defines the default attribute.
+The default attribute is distinguished in two ways: 1) if no attribute specifier is given on an attribute reference, the default attribute is assumed (see <a href="#_sec_semanticrules">Semantic Rules</a>) and 2) the value for the default attribute of the starting non-terminal becomes the return value of the parse.</p>
+</div>
+<div class="paragraph">
+<p>Optionally, one may specify a type declaration for the attribute record using the <code>%attributetype</code> declaration.
+This allows you to define the type given to the attribute record and, more importantly, allows you to introduce type variables that can be subsequently used in <code>%attribute</code> declarations.
+If the <code>%attributetype</code> directive is given without any <code>%attribute</code> declarations, then the <code>%attributetype</code> declaration has no effect.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following declarations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%attributetype { MyAttributes a }
+%attribute value { a }
+%attribute num   { Int }
+%attribute label { String }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would generate this attribute record declaration in the parser:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>data MyAttributes a =
+   HappyAttributes {
+     value :: a,
+     num :: Int,
+     label :: String
+   }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and <code>value</code> would be the default attribute.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_semanticrules">4.2.2. Semantic Rules</h4>
+<div class="paragraph">
+<p>In an ordinary Happy grammar, a production consists of a list of terminals and/or non-terminals followed by an uninterpreted code fragment enclosed in braces.
+With an attribute grammar, the format is very similar, but the braces enclose a set of semantic rules rather than uninterpreted Haskell code.
+Each semantic rule is either an attribute calculation or a conditional, and rules are separated by semicolons<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Both attribute calculations and conditionals may contain attribute references and/or terminal references.
+Just like regular Happy grammars, the tokens <code>$1</code> through <code>$&lt;n&gt;</code>, where <code>n</code> is the number of symbols in the production, refer to subtrees of the parse.
+If the referenced symbol is a terminal, then the value of the reference is just the value of the terminal, the same way as in a regular Happy grammar.
+If the referenced symbol is a non-terminal, then the reference may be followed by an attribute specifier, which is a dot followed by an attribute name.
+If the attribute specifier is omitted, then the default attribute is assumed (the default attribute is the first attribute appearing in an <code>%attribute</code> declaration). The special reference <code>$$</code> references the attributes of the current node in the parse tree; it behaves exactly like the numbered references.
+Additionally, the reference <code>$&gt;</code> always references the rightmost symbol in the production.</p>
+</div>
+<div class="paragraph">
+<p>An attribute calculation rule is of the form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;attribute reference&gt; = &lt;Haskell expression&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A rule of this form defines the value of an attribute, possibly as a function of the attributes of <code>$$</code> (inherited attributes), the attributes of non-terminals in the production (synthesized attributes), or the values of terminals in the production.
+The value for an attribute can only be defined once for a particular production.</p>
+</div>
+<div class="paragraph">
+<p>The following rule calculates the default attribute of the current production in terms of the first and second items of the production (a synthesized attribute):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$$ = $1 : $2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This rule calculates the length attribute of a non-terminal in terms of the length of the current non-terminal (an inherited attribute):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$1.length = $$.length + 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Conditional rules allow the rejection of strings due to context-sensitive properties.
+All conditional rules have the form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>where &lt;Haskell expression&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For non-monadic parsers, all conditional expressions must be of the same (monomorphic) type.
+At the end of the parse, the conditionals will be reduced using <code>seq</code>, which gives the grammar an opportunity to call <code>error</code> with an informative message.
+For monadic parsers, all conditional statements must have type <code>Monad m &#8658; m ()</code> where <code>m</code> is the monad in which the parser operates.
+All conditionals will be sequenced at the end of the parse, which allows the conditionals to call <code>fail</code> with an informative message.</p>
+</div>
+<div class="paragraph">
+<p>The following conditional rule will cause the (non-monadic) parser to fail if the inherited length attribute is not 0.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>where if $$.length == 0 then () else error "length not equal to 0"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This conditional is the monadic equivalent:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>where unless ($$.length == 0) (fail "length not equal to 0")</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_attrgrammarlimits">4.3. Limits of Happy Attribute Grammars</h3>
+<div class="paragraph">
+<p>If you are not careful, you can write an attribute grammar which fails to terminate.
+This generally happens when semantic rules are written which cause a circular dependency on the value of an attribute.
+Even if the value of the attribute is well-defined (that is, if a fixpoint calculation over attribute values will eventually converge to a unique solution), this attribute grammar system will not evaluate such grammars.</p>
+</div>
+<div class="paragraph">
+<p>One practical way to overcome this limitation is to ensure that each attribute is always used in either a top-down (inherited) fashion or in a bottom-up (synthesized) fashion.
+If the calculations are sufficiently lazy, one can "tie the knot" by synthesizing a value in one attribute, and then assigning that value to another, inherited attribute at some point in the parse tree.
+This technique can be useful for common tasks like building symbol tables for a syntactic scope and making that table available to sub-nodes of the parse.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_attributegrammarexample">4.4. Example Attribute Grammars</h3>
+<div class="paragraph">
+<p>The following two toy attribute grammars may prove instructive.
+The first is an attribute grammar for the classic context-sensitive grammar { a^n b^n c^n | n &gt;= 0 }.  It demonstrates the use of conditionals, inherited and synthesized attributes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+module ABCParser (parse) where
+}
+
+%tokentype { Char }
+
+%token a { 'a' }
+%token b { 'b' }
+%token c { 'c' }
+%token newline { '\n' }
+
+%attributetype { Attrs a }
+%attribute value { a }
+%attribute len   { Int }
+
+%name parse abcstring
+
+%%
+
+abcstring
+   : alist blist clist newline
+        { $$ = $1 ++ $2 ++ $3
+        ; $2.len = $1.len
+        ; $3.len = $1.len
+        }
+
+alist
+   : a alist
+        { $$ = $1 : $2
+        ; $$.len = $2.len + 1
+        }
+   |    { $$ = []; $$.len = 0 }
+
+blist
+   : b blist
+        { $$ = $1 : $2
+        ; $2.len = $$.len - 1
+        }
+   |    { $$ = []
+        ; where failUnless ($$.len == 0) "blist wrong length"
+        }
+
+clist
+   : c clist
+        { $$ = $1 : $2
+        ; $2.len = $$.len - 1
+        }
+   |    { $$ = []
+        ; where failUnless ($$.len == 0) "clist wrong length"
+        }
+
+{
+happyError = error "parse error"
+failUnless b msg = if b then () else error msg
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This grammar parses binary numbers and calculates their value.
+It demonstrates the use of inherited and synthesized attributes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+module BitsParser (parse) where
+}
+
+%tokentype { Char }
+
+%token minus { '-' }
+%token plus  { '+' }
+%token one   { '1' }
+%token zero  { '0' }
+%token newline { '\n' }
+
+%attributetype { Attrs }
+%attribute value { Integer }
+%attribute pos   { Int }
+
+%name parse start
+
+%%
+
+start
+   : num newline { $$ = $1 }
+
+num
+   : bits        { $$ = $1       ; $1.pos = 0 }
+   | plus bits   { $$ = $2       ; $2.pos = 0 }
+   | minus bits  { $$ = negate $2; $2.pos = 0 }
+
+bits
+   : bit         { $$ = $1
+                 ; $1.pos = $$.pos
+                 }
+
+   | bits bit    { $$ = $1 + $2
+                 ; $1.pos = $$.pos + 1
+                 ; $2.pos = $$.pos
+                 }
+
+bit
+   : zero        { $$ = 0 }
+   | one         { $$ = 2^($$.pos) }
+
+{
+happyError = error "parse error"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_invoking">5. Invoking <code class="app">Happy</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An invocation of <code class="app">Happy</code> has the following syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ happy [ options ] filename [ options ]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All the command line options are optional (!) and may occur either before or after the input file name.
+Options that take arguments may be given multiple times, and the last occurrence will be the value used.</p>
+</div>
+<div class="paragraph">
+<p>There are two types of grammar files, <em class="path">file.y</em> and <em class="path">file.ly</em>, with the latter observing the reverse comment (or literate) convention (i.e.
+each code line must begin with the character <code>&gt;</code>, lines which don&#8217;t begin with <code>&gt;</code> are treated as comments).  The examples distributed with <code class="app">Happy</code> are all of the .ly form.
+</p>
+</div>
+<div class="paragraph">
+<p>The flags accepted by <code class="app">Happy</code> are as follows:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code class="option">-o</code><code class="replaceable">file</code></dt>
+<dd>
+<p>Specifies the destination of the generated parser module.
+If omitted, the parser will be placed in <code class="replaceable">file</code><code>.hs</code>, where <code class="replaceable">file</code> is the name of the input file with any extension removed.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><code class="option">-i</code>
++Directs <code class="app">Happy</code> to produce an info file containing detailed information about the grammar, parser states, parser actions, and conflicts.
+Info files are vital during the debugging of grammars.
+The filename argument is optional (note that there&#8217;s no space between <code>-i</code> and the filename in the short version), and if omitted the info file will be written to <code class="replaceable">file</code><code>.info</code> (where <code class="replaceable">file</code> is the input file name with any extension removed).</p>
+</div>
+<div class="paragraph">
+<p><code class="option">-p</code>
++Directs <code class="app">Happy</code> to produce a file containing a pretty-printed form of the grammar, containing only the productions, withouth any semantic actions or type signatures.
+If no file name is provided, then the file name will be computed by replacing the extension of the input file with <code>.grammar</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code class="option">-t</code><code class="replaceable">dir</code></dt>
+<dd>
+<p>+Instructs <code class="app">Happy</code> to use this directory when looking for template files: these files contain the static code that <code class="app">Happy</code> includes in every generated parser.
+You shouldn&#8217;t need to use this option if <code class="app">Happy</code> is properly configured for your computer.</p>
+</dd>
+<dt class="hdlist1"><code class="option">-m</code><code class="replaceable">name</code></dt>
+<dd>
+<p><code class="app">Happy</code> prefixes all the symbols it uses internally with either <code>happy</code> or <code>Happy</code>.
+To use a different string, for example if the use of <code>happy</code> is conflicting with one of your own functions, specify the prefix using the <code class="option">-m</code> option.</p>
+</dd>
+<dt class="hdlist1"><code class="option">-s</code></dt>
+<dd>
+<p>NOTE: the <code class="option">--strict</code> option is experimental and may cause unpredictable results.</p>
+<div class="paragraph">
+<p>This option causes the right hand side of each production (the semantic value) to be evaluated eagerly at the moment the production is reduced.
+If the lazy behaviour is not required, then using this option will improve performance and may reduce space leaks.
+Note that the parser as a whole is never lazy - the whole input will always be consumed before any input is produced, regardless of the setting of the <code class="option">--strict</code> flag.</p>
+</div>
+</dd>
+<dt class="hdlist1"><code class="option">-g</code></dt>
+<dd>
+<div class="paragraph">
+<p>
++Instructs <code class="app">Happy</code> to generate a parser that uses GHC-specific extensions to obtain faster code.</p>
+</div>
+</dd>
+<dt class="hdlist1"><code class="option">-c</code></dt>
+<dd>
+<div class="paragraph">
+<p>+Use GHC&#8217;s <code>unsafeCoerce#</code> extension to generate smaller faster parsers.
+Type-safety isn&#8217;t compromised.</p>
+</div>
+<div class="paragraph">
+<p>This option may only be used in conjunction with <code class="option">-g</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1"><code class="option">-a</code></dt>
+<dd>
+<div class="paragraph">
+<p>+Instructs <code class="app">Happy</code> to generate a parser using an array-based shift reduce parser.
+When used in conjunction with <code class="option">-g</code>, the arrays will be encoded as strings, resulting in faster parsers.
+Without <code class="option">-g</code>, standard Haskell arrays will be used.</p>
+</div>
+</dd>
+<dt class="hdlist1"><code class="option">-d</code></dt>
+<dd>
+<div class="paragraph">
+<p>+Generate a parser that will print debugging information to <code>stderr</code> at run-time, including all the shifts, reductions, state transitions and token inputs performed by the parser.</p>
+</div>
+<div class="paragraph">
+<p>This option can only be used in conjunction with <code class="option">-a</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1"><code class="option">-l</code></dt>
+<dd>
+<div class="paragraph">
+<p>+Generate a GLR parser for ambiguous grammars.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><code class="option">-k</code>::+
+Generate simple decoding code for GLR result.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code class="option">-f</code></dt>
+<dd>
+<p>+Filter the GLR parse forest with respect to semantic usage.</p>
+</dd>
+<dt class="hdlist1"><code class="option">-?</code></dt>
+<dd>
+<p>Print usage information on standard output then exit successfully.</p>
+</dd>
+<dt class="hdlist1"><code class="option">-V</code></dt>
+<dd>
+<p>Print version information on standard output then exit successfully.
+Note that for legacy reasons <code class="option">-v</code>	  is supported, too, but the use of it is deprecated. <code class="option">-v</code> will be used for verbose mode when it is actually implemented.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_grammar_files">6. Syntax of Grammar Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The input to <code class="app">Happy</code> is a text file containing the grammar of the language you want to parse, together with some annotations that help the parser generator make a legal Haskell module that can be included in your program.
+This section gives the exact syntax of grammar files.</p>
+</div>
+<div class="paragraph">
+<p>The overall format of the grammar file is given below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;optional module header&gt;
+&lt;directives&gt;
+%%
+&lt;grammar&gt;
+&lt;optional module trailer&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>If the name of the grammar file ends in <code>.ly</code>, then it is assumed to be a literate script.
+All lines except those beginning with a <code>&gt;</code> will be ignored, and the <code>&gt;</code> will be stripped from the beginning of all the code lines.
+There must be a blank line between each code section (lines beginning with <code>&gt;</code>) and comment section.
+Grammars not using the literate notation must be in a file with the <code>.y</code> suffix.</p>
+</div>
+<div class="sect2">
+<h3 id="_sec_lexical_rules">6.1. Lexical Rules</h3>
+<div class="paragraph">
+<p>Identifiers in <code class="app">Happy</code> grammar files must take the following form (using the BNF syntax from the Haskell Report):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>id      ::= alpha { idchar }
+          | ' { any{^'} | \' } '
+          | " { any{^"} | \" } "
+
+alpha   ::= A | B | ... | Z
+          | a | b | ... | z
+
+idchar  ::= alpha
+          | 0 | 1 | ... | 9
+          | _</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_module_header">6.2. Module Header</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>This section is optional, but if included takes the following form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+&lt;Haskell module header&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Haskell module header contains the module name, exports, and imports.
+No other code is allowed in the header&mdash;this is because <code class="app">Happy</code> may need to include its own <code>import</code> statements directly after the user defined header.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_directives">6.3. Directives</h3>
+<div class="paragraph">
+<p>This section contains a number of lines of the form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%&lt;directive name&gt; &lt;argument&gt; ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The statements here are all annotations to help <code class="app">Happy</code> generate the Haskell code for the grammar.
+Some of them are optional, and some of them are required.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_token_type">6.3.1. Token Type</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%tokentype   { &lt;valid Haskell type&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(mandatory) The <code>%tokentype</code> directive gives the type of the tokens passed from the lexical analyser to the parser (in order that <code class="app">Happy</code> can supply types for functions and data in the generated parser).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_tokens">6.3.2. Tokens</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%token &lt;name&gt; { &lt;Haskell pattern&gt; }
+       &lt;name&gt; { &lt;Haskell pattern&gt; }
+       ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(mandatory) The <code>%token</code> directive is used to tell <code class="app">Happy</code> about all the terminal symbols used in the grammar.
+Each terminal has a name, by which it is referred to in the grammar itself, and a Haskell representation enclosed in braces.
+Each of the patterns must be of the same type, given by the <code>%tokentype</code> directive.</p>
+</div>
+<div class="paragraph">
+<p>The name of each terminal follows the lexical rules for <code class="app">Happy</code> identifiers given above.
+There are no lexical differences between terminals and non-terminals in the grammar, so it is recommended that you stick to a convention; for example using upper case letters for terminals and lower case for non-terminals, or vice-versa.</p>
+</div>
+<div class="paragraph">
+<p><code class="app">Happy</code> will give you a warning if you try to use the same identifier both as a non-terminal and a terminal, or introduce an identifier which is declared as neither.</p>
+</div>
+<div class="paragraph">
+<p>To save writing lots of projection functions that map tokens to their components, you can include <code>&dollar;&dollar;</code> in your Haskell pattern.
+For example:
+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%token INT { TokenInt $$ }
+       ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This makes the semantic value of <code>INT</code> refer to the first argument of <code>TokenInt</code> rather than the whole token, eliminating the need for any projection function.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_parser_name">6.3.3. Parser Name</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%name &lt;Haskell identifier&gt; [ &lt;non-terminal&gt; ]
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(optional) The <code>%name</code> directive is followed by a valid Haskell identifier, and gives the name of the top-level parsing function in the generated parser.
+This is the only function that needs to be exported from a parser module.</p>
+</div>
+<div class="paragraph">
+<p>If the <code>%name</code> directive is omitted, it defaults to <code>happyParse</code>.
+</p>
+</div>
+<div class="paragraph">
+<p>The <code>%name</code> directive takes an optional second parameter which specifies the top-level non-terminal which is to be parsed.
+If this parameter is omitted, it defaults to the first non-terminal defined in the grammar.</p>
+</div>
+<div class="paragraph">
+<p>Multiple <code>%name</code> directives may be given, specifying multiple parser entry points for this grammar (see <a href="#_sec_multiple_parsers">Generating Multiple Parsers From a Single Grammar</a>).  When multiple <code>%name</code> directives are given, they must all specify explicit non-terminals.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_partial_parsers">6.3.4. Partial Parsers</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%partial &lt;Haskell identifier&gt; [ &lt;non-terminal&gt; ]
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The <code>%partial</code> directive can be used instead of <code>%name</code>.
+It indicates that the generated parser should be able to parse an initial portion of the input.
+In contrast, a parser specified with <code>%name</code> will only parse the entire input.</p>
+</div>
+<div class="paragraph">
+<p>A parser specified with <code>%partial</code> will stop parsing and return a result as soon as there exists a complete parse, and no more of the input can be parsed.
+It does this by accepting the parse if it is followed by the <code>error</code> token, rather than insisting that the parse is followed by the end of the token stream (or the <code>eof</code> token in the case of a <code>%lexer</code> parser).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_monad_decl">6.3.5. Monad Directive</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%monad { &lt;type&gt; } { &lt;then&gt; } { &lt;return&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(optional) The <code>%monad</code> directive takes three arguments: the type constructor of the monad, the <code>then</code> (or <code>bind</code>) operation, and the <code>return</code> (or <code>unit</code>) operation.
+The type constructor can be any type with kind <code>\* &#8594; *</code>.</p>
+</div>
+<div class="paragraph">
+<p>Monad declarations are described in more detail in <a href="#_sec_monads">Monadic Parsers</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_lexer_decl">6.3.6. Lexical Analyser</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%lexer { &lt;lexer&gt; } { &lt;eof&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(optional) The <code>%lexer</code> directive takes two arguments: <code>&lt;lexer&gt;</code> is the name of the lexical analyser function, and <code>&lt;eof&gt;</code> is a token that is to be treated as the end of file.</p>
+</div>
+<div class="paragraph">
+<p>Lexer declarations are described in more detail in <a href="#_sec_lexers">Threaded Lexers</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_prec_decls">6.3.7. Precedence declarations</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%left     &lt;name&gt; ...
+%right    &lt;name&gt; ...
+%nonassoc &lt;name&gt; ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>
+
+</p>
+</div>
+<div class="paragraph">
+<p>These declarations are used to specify the precedences and associativity of tokens.
+The precedence assigned by a <code>%left</code>, <code>%right</code> or <code>%nonassoc</code> declaration is defined to be higher than the precedence assigned by all declarations earlier in the file, and lower than the precedence assigned by all declarations later in the file.</p>
+</div>
+<div class="paragraph">
+<p>The associativity of a token relative to tokens in the same <code>%left</code>, <code>%right</code>, or <code>%nonassoc</code> declaration is to the left, to the right, or non-associative respectively.</p>
+</div>
+<div class="paragraph">
+<p>Precedence declarations are described in more detail in <a href="#_sec_precedences">Using Precedences</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_expect">6.3.8. Expect declarations</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%expect &lt;number&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(optional) More often than not the grammar you write will have conflicts.
+These conflicts generate warnings.
+But when you have checked the warnings and made sure that Happy handles them correctly these warnings are just annoying.
+The <code>%expect</code> directive gives a way of avoiding them.
+Declaring <code>%expect<code class="replaceable">n</code></code> is a way of telling Happy &ldquo;There are exactly <code class="replaceable">n</code>	shift/reduce conflicts and zero reduce/reduce conflicts in this grammar.
+I promise I have checked them and they are resolved correctly&rdquo;.
+When processing the grammar, Happy will check the actual number of conflicts against the <code>%expect</code> declaration if any, and if there is a discrepancy then an error will be reported.</p>
+</div>
+<div class="paragraph">
+<p>Happy&#8217;s <code>%expect</code> directive works exactly like that of yacc.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_error_directive">6.3.9. Error declaration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%error { &lt;identifier&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Specifies the function to be called in the event of a parse error.
+The type of <code>&lt;identifier&gt;</code> varies depending on the presence of <code>%lexer</code> (see <a href="#_sec_monad_summary">Summary</a>) and <code>%errorhandlertype</code>	(see the following).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_errorhandlertype_directive">6.3.10. Additional error information</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%errorhandlertype (explist | default)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(optional) The expected type of the user-supplied error handling can be applied with additional information.
+By default, no information is added, for compatibility with previous versions.
+However, if <code>explist</code>	is provided with this directive, then the first application will be of type <code>[String]</code>, providing a description of possible tokens that would not have failed the parser in place of the token that has caused the error.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_attributes">6.3.11. Attribute Type Declaration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%attributetype { &lt;valid Haskell type declaration&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>(optional) This directive allows you to declare the type of the attributes record when defining an attribute grammar.
+If this declaration is not given, Happy will choose a default.
+This declaration may only appear once in a grammar.</p>
+</div>
+<div class="paragraph">
+<p>Attribute grammars are explained in <a href="#_sec_attributegrammar">Attribute Grammars</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sec_attribute">6.3.12. Attribute declaration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>%attribute &lt;Haskell identifier&gt; { &lt;valid Haskell type&gt; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>The presence of one or more of these directives declares that the grammar is an attribute grammar.
+The first attribute listed becomes the default attribute.
+Each <code>%attribute</code> directive generates a field in the attributes record with the given label and type.
+If there is an <code>%attributetype</code> declaration in the grammar which introduces type variables, then the type of an attribute may mention any such type variables.</p>
+</div>
+<div class="paragraph">
+<p>Attribute grammars are explained in <a href="#_sec_attributegrammar">Attribute Grammars</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_grammar">6.4. Grammar</h3>
+<div class="paragraph">
+<p>The grammar section comes after the directives, separated from them by a double-percent (<code>%%</code>) symbol.
+This section contains a number of <em>productions</em>, each of which defines a single non-terminal.
+Each production has the following syntax:
+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&lt;non-terminal&gt; [ :: { &lt;type&gt; } ]
+        :  &lt;id&gt; ... {[%] &lt;expression&gt; }
+      [ |  &lt;id&gt; ... {[%] &lt;expression&gt; }
+        ... ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first line gives the non-terminal to be defined by the production and optionally its type (type signatures for productions are discussed in <a href="#_sec_type_signatures">Type Signatures</a>).</p>
+</div>
+<div class="paragraph">
+<p>Each production has at least one, and possibly many right-hand sides.
+Each right-hand side consists of zero or more symbols (terminals or non-terminals) and a Haskell expression enclosed in braces.</p>
+</div>
+<div class="paragraph">
+<p>The expression represents the semantic value of the non-terminal, and may refer to the semantic values of the symbols in the right-hand side using the meta-variables <code>&dollar;1 &#8230;&#8203; &dollar;n</code>.
+It is an error to refer to <code>&dollar;i</code> when <code>i</code> is larger than the number of symbols on the right hand side of the current rule.
+The symbol <code>&dollar;</code> may be inserted literally in the Haskell expression using the sequence <code>&amp;dollar;</code> (this isn&#8217;t necessary inside a string or character literal).</p>
+</div>
+<div class="paragraph">
+<p>Additionally, the sequence <code>&dollar;&gt;</code> can be used to represent the value of the rightmost symbol.</p>
+</div>
+<div class="paragraph">
+<p>A semantic value of the form <code>{% &#8230;&#8203; }</code> is a <em>monadic action</em>, and is only valid when the grammar file contains a <code>%monad</code> directive (<a href="#_sec_monad_decl">Monad Directive</a>).  Monadic actions are discussed in <a href="#_sec_monads">Monadic Parsers</a>.
+</p>
+</div>
+<div class="paragraph">
+<p>Remember that all the expressions for a production must have the same type.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_param_prods">6.4.1. Parameterized Productions</h4>
+<div class="paragraph">
+<p>Starting from version 1.17.1, <code class="app">Happy</code> supports <em>parameterized productions</em> which provide a convenient notation for capturing recurring patterns in context free grammars.
+This gives the benefits of something similar to parsing combinators in the context of <code class="app">Happy</code> grammars.</p>
+</div>
+<div class="paragraph">
+<p>This functionality is best illustrated with an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>opt(p)          : p                   { Just $1 }
+                |                     { Nothing }
+
+rev_list1(p)    : p                   { [$1] }
+                | rev_list1(p) p      { $2 : $1 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first production, <code>opt</code>, is used for optional components of a grammar.
+It is just like <code>p?</code> in regular expressions or EBNF.
+The second production, <code>rev_list1</code>, is for parsing a list of 1 or more occurrences of <code>p</code>.
+Parameterized productions are just like ordinary productions, except that they have parameter in parenthesis after the production name.
+Multiple parameters should be separated by commas:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>fst(p,q)        : p q                 { $1 }
+snd(p,q)        : p q                 { $2 }
+both(p,q)       : p q                 { ($1,$2) }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To use a parameterized production, we have to pass values for the parameters, as if we are calling a function.
+The parameters can be either terminals, non-terminals, or other instantiations of parameterized productions.
+Here are some examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>list1(p)        : rev_list1(p)        { reverse $1 }
+list(p)         : list1(p)            { $1 }
+                |                     { [] }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first production uses <code>rev_list</code> to define a production that behaves like <code>p+</code>, returning a list of elements in the same order as they occurred in the input.
+The second one, <code>list</code> is like <code>p*</code>.</p>
+</div>
+<div class="paragraph">
+<p>Parameterized productions are implemented as a preprocessing pass in Happy:  each instantiation of a production turns into a separate non-terminal, but are careful to avoid generating the same rule multiple times, as this would lead to an ambiguous grammar.
+Consider, for example, the following parameterized rule:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sep1(p,q)       : p list(snd(q,p))    { $1 : $2 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rules that would be generated for <code>sep1(EXPR,SEP)</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sep1(EXPR,SEP)
+  : EXPR list(snd(SEP,EXPR))                { $1 : $2 }
+
+list(snd(SEP,EXPR))
+  : list1(snd(SEP,EXPR))                    { $1 }
+  |                                         { [] }
+
+list1(snd(SEP,EXPR))
+  : rev_list1(snd(SEP,EXPR))                { reverse $1 }
+
+rev_list1(snd(SEP,EXPR))
+  : snd(SEP,EXPR))                          { [$1] }
+  | rev_list1(snd(SEP,EXPR)) snd(SEP,EXPR)  { $2 : $1 }
+
+snd(SEP,EXPR)
+  : SEP EXPR                                { $2 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that this is just a normal grammar, with slightly strange names for the non-terminals.</p>
+</div>
+<div class="paragraph">
+<p>A drawback of the current implementation is that it does not support type signatures for the parameterized productions, that depend on the types of the parameters.
+We plan to implement that in the future---the current workaround is to omit the type signatures for such rules.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_module_trailer">6.5. Module Trailer</h3>
+<div class="paragraph">
+<p>The module trailer is optional, comes right at the end of the grammar file, and takes the same form as the module header:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+&lt;Haskell code&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This section is used for placing auxiliary definitions that need to be in the same module as the parser.
+In small parsers, it often contains a hand-written lexical analyser too.
+There is no restriction on what can be placed in the module trailer, and any code in there is copied verbatim into the generated parser file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_info_files">7. Info Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Happy info files, generated using the <code>-i</code> flag, are your most important tool for debugging errors in your grammar.
+Although they can be quite verbose, the general concept behind them is quite simple.</p>
+</div>
+<div class="paragraph">
+<p>An info file contains the following information:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A summary of all shift/reduce and reduce/reduce conflicts in the grammar.</p>
+</li>
+<li>
+<p>Under section <code>Grammar</code>, a summary of all the rules in the grammar. These rules correspond directly to your input file, absent the actual Haskell code that is to be run for each rules. A rule is written in the form <code>&lt;non-terminal&gt; &#8594; &lt;id&gt; &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>Under section <code>Terminals</code>, a summary of all the terminal tokens you may run against, as well as a the Haskell pattern which matches against them. This corresponds directly to the contents of your <code>%token</code> directive (<a href="#_sec_tokens">Tokens</a>).</p>
+</li>
+<li>
+<p>Under section <code>Non-terminals</code>, a summary of which rules apply to which productions. This is generally redundant with the <code>Grammar</code> section.</p>
+</li>
+<li>
+<p>The primary section <code>States</code>, which describes the state-machine Happy built for your grammar, and all of the transitions for each state.</p>
+</li>
+<li>
+<p>Finally, some statistics <code>Grammar Totals</code> at the end of the file.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In general, you will be most interested in the <code>States</code> section, as it will give you information, in particular, about any conflicts your grammar may have.</p>
+</div>
+<div class="sect2">
+<h3 id="_sec_info_files_states">7.1. States</h3>
+<div class="paragraph">
+<p>Although Happy does its best to insulate you from the vagaries of parser generation, it&#8217;s important to know a little about how shift-reduce parsers work in order to be able to interpret the entries in the <code>States</code> section.</p>
+</div>
+<div class="paragraph">
+<p>In general, a shift-reduce parser operates by maintaining parse stack, which tokens and productions are shifted onto or reduced off of.
+The parser maintains a state machine, which accepts a token, performs some shift or reduce, and transitions to a new state for the next token.
+Importantly, these states represent <em>multiple</em> possible productions, because in general the parser does not know what the actual production for the tokens it&#8217;s parsing is going to be.
+There&#8217;s no direct correspondence between the state-machine and the input grammar; this is something you have to reverse engineer.</p>
+</div>
+<div class="paragraph">
+<p>With this knowledge in mind, we can look at two example states from the example grammar from <a href="#_sec_using">Using <code class="app">Happy</code></a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>State 5
+
+        Exp1 -&gt; Term .                                      (rule 5)
+        Term -&gt; Term . '*' Factor                           (rule 6)
+        Term -&gt; Term . '/' Factor                           (rule 7)
+
+        in             reduce using rule 5
+        '+'            reduce using rule 5
+        '-'            reduce using rule 5
+        '*'            shift, and enter state 11
+        '/'            shift, and enter state 12
+        ')'            reduce using rule 5
+        %eof           reduce using rule 5
+
+State 9
+
+        Factor -&gt; '(' . Exp ')'                             (rule 11)
+
+        let            shift, and enter state 2
+        int            shift, and enter state 7
+        var            shift, and enter state 8
+        '('            shift, and enter state 9
+
+        Exp            goto state 10
+        Exp1           goto state 4
+        Term           goto state 5
+        Factor         goto state 6</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For each state, the first set of lines describes the <em>rules</em> which correspond to this state.
+A period <code>.</code> is inserted in the production to indicate where, if this is indeed the correct production, we would have parsed up to.
+In state 5, there are multiple rules, so we don&#8217;t know if we are parsing an <code>Exp1</code>, a multiplication or a division (however, we do know there is a <code>Term</code> on the parse stack); in state 9, there is only one rule, so we know we are definitely parsing a <code>Factor</code>.</p>
+</div>
+<div class="paragraph">
+<p>The next set of lines specifies the action and state transition that should occur given a token.
+For example, if in state 5 we process the <code>'<strong>'</code> token, this token is shifted onto the parse stack and we transition to the state corresponding to the rule <code>Term &#8594; Term '</strong>' .
+          Factor</code> (matching the token disambiguated which state we are in.)</p>
+</div>
+<div class="paragraph">
+<p>Finally, for states which shift on non-terminals, there will be a last set of lines saying what should be done after the non-terminal has been fully parsed; this information is effectively the stack for the parser.
+When a reduce occurs, these goto entries are used to determine what the next state should be.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_info_files_conflicts">7.2. Interpreting conflicts</h3>
+<div class="paragraph">
+<p>When you have a conflict, you will see an entry like this in your info file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>State 432
+
+        atype -&gt; SIMPLEQUOTE '[' . comma_types0 ']'         (rule 318)
+        sysdcon -&gt; '[' . ']'                                (rule 613)
+
+        '_'            shift, and enter state 60
+        'as'           shift, and enter state 16
+
+...
+
+        ']'            shift, and enter state 381
+                        (reduce using rule 328)
+
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On large, complex grammars, determining what the conflict is can be a bit of an art, since the state with the conflict may not have enough information to determine why a conflict is occurring).</p>
+</div>
+<div class="paragraph">
+<p>In some cases, the rules associated with the state with the conflict will immediately give you enough guidance to determine what the ambiguous syntax is.
+For example, in the miniature shift/reduce conflict described in <a href="#_sec_conflict_tips">Conflict Tips</a>, the conflict looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>State 13
+
+        exp -&gt; exp . '+' exp0                               (rule 1)
+        exp0 -&gt; if exp then exp else exp .                  (rule 3)
+
+        then           reduce using rule 3
+        else           reduce using rule 3
+        '+'            shift, and enter state 7
+                        (reduce using rule 3)
+
+        %eof           reduce using rule 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, rule 3 makes it easy to imagine that we had been parsing a statement like <code>if 1 then 2 else 3 + 4</code>; the conflict arises from whether or not we should shift (thus parsing as <code>if 1 then 2 else (3 + 4)</code>) or reduce (thus parsing as <code>(if 1 then 2 else 3) + 4</code>).</p>
+</div>
+<div class="paragraph">
+<p>Sometimes, there&#8217;s not as much helpful context in the error message; take this abridged example from GHC&#8217;s parser:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>State 49
+
+        type -&gt; btype .                                     (rule 281)
+        type -&gt; btype . '-&gt;' ctype                          (rule 284)
+
+        '-&gt;'           shift, and enter state 472
+                        (reduce using rule 281)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A pair of rules like this doesn&#8217;t always result in a shift/reduce conflict: to reduce with rule 281 implies that, in some context when parsing the non-terminal <code>type</code>, it is possible for an <code>'&#8594;'</code> to occur immediately afterwards (indeed these source rules are factored such that there is no rule of the form <code>... &#8594; type '&#8594;' &#8230;&#8203;</code>).</p>
+</div>
+<div class="paragraph">
+<p>The best way this author knows how to sleuth this out is to look for instances of the token and check if any of the preceeding non-terminals could terminate in a type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>        texp -&gt; exp '-&gt;' texp                              (500)
+        exp -&gt; infixexp '::' sigtype                       (414)
+        sigtype -&gt; ctype                                   (260)
+        ctype -&gt; type                                      (274)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As it turns out, this shift/reduce conflict results from ambiguity for <em>view patterns</em>, as in the code sample <code>case v of { x :: T &#8594; T &#8230;&#8203; }</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sec_tips">8. Tips</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains a lot of accumulated lore about using <code class="app">Happy</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_sec_performance_tips">8.1. Performance Tips</h3>
+<div class="paragraph">
+<p>How to make your parser go faster:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you are using GHC</p>
+<div class="paragraph">
+<p>	  , generate parsers using the <code>-a -g -c</code> options, and compile them using GHC with the <code>-fglasgow-exts</code> option.
+This is worth a <em>lot</em>, in terms of compile-time, execution speed and binary size.<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p>
+</div>
+</li>
+<li>
+<p>The lexical analyser is usually the most performance critical part of a parser, so it&#8217;s worth spending some time optimising this. Profiling tools are essential here. In really dire circumstances, resort to some of the hacks that are used in the Glasgow Haskell Compiler&#8217;s interface-file lexer.</p>
+</li>
+<li>
+<p>Simplify the grammar as much as possible, as this reduces the number of states and reduction rules that need to be applied.</p>
+</li>
+<li>
+<p>Use left recursion rather than right recursion</p>
+<div class="paragraph">
+<p> wherever possible.
+While not strictly a performance issue, this affects the size of the parser stack, which is kept on the heap and thus needs to be garbage collected.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_compilation_time">8.2. Compilation-Time Tips</h3>
+<div class="paragraph">
+<p>We have found that compiling parsers generated by <code class="app">Happy</code> can take a large amount of time/memory, so here&#8217;s some tips on making things more sensible:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Include as little code as possible in the module trailer. This code is included verbatim in the generated parser, so if any of it can go in a separate module, do so.</p>
+</li>
+<li>
+<p>Give type signatures</p>
+<div class="paragraph">
+<p>	  for everything (see <a href="#_sec_type_signatures">Type Signatures</a>.
+This is reported to improve things by about 50%.  If there is a type signature for every single non-terminal in the grammar, then <code class="app">Happy</code> automatically generates type signatures for most functions in the parser.</p>
+</div>
+</li>
+<li>
+<p>Simplify the grammar as much as possible (applies to everything, this one).</p>
+</li>
+<li>
+<p>Use a recent version of GHC. Versions from 4.04 onwards have lower memory requirements for compiling <code class="app">Happy</code>-generated parsers.</p>
+</li>
+<li>
+<p>Using <code class="app">Happy</code>'s <code>-g -a -c</code>	  options when generating parsers to be compiled with GHC will help considerably.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_finding_errors">8.3. Finding Type Errors</h3>
+<div class="paragraph">
+<p>Finding type errors in grammar files is inherently difficult because the code for reductions is moved around before being placed in the parser.
+We currently have no way of passing the original filename and line numbers to the Haskell compiler, so there is no alternative but to look at the parser and match the code to the grammar file.
+An info file (generated by the <code>-i</code> option) can be helpful here.
+</p>
+</div>
+<div class="paragraph">
+<p>Type signature sometimes help by pinning down the particular error to the place where the mistake is made, not half way down the file.
+For each production in the grammar, there&#8217;s a bit of code in the generated file that looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>HappyAbsSyn&lt;n&gt; ( E )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>E</code> is the Haskell expression from the grammar file (with <code>&dollar;n</code> replaced by <code>happy_var_n</code>).  If there is a type signature for this production, then <code class="app">Happy</code> will have taken it into account when declaring the HappyAbsSyn datatype, and errors in <code>E</code> will be caught right here.
+Of course, the error may be really caused by incorrect use of one of the <code>happy_var_n</code> variables.</p>
+</div>
+<div class="paragraph">
+<p>(this section will contain more info as we gain experience with creating grammar files.
+Please send us any helpful tips you find.)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_conflict_tips">8.4. Conflict Tips</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>Conflicts arise from ambiguities in the grammar.
+That is, some input sequences may possess more than one parse.
+Shift/reduce conflicts are benign in the sense that they are easily resolved (<code class="app">Happy</code> automatically selects the shift action, as this is usually the intended one). Reduce/reduce conflicts are more serious.
+A reduce/reduce conflict implies that a certain sequence of tokens on the input can represent more than one non-terminal, and the parser is uncertain as to which reduction rule to use.
+It will select the reduction rule uppermost in the grammar file, so if you really must have a reduce/reduce conflict you can select which rule will be used by putting it first in your grammar file.</p>
+</div>
+<div class="paragraph">
+<p>It is usually possible to remove conflicts from the grammar, but sometimes this is at the expense of clarity and simplicity.
+Here is a cut-down example from the grammar of Haskell (1.2):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>exp     : exp op exp0
+        | exp0
+
+exp0    : if exp then exp else exp
+        ...
+        | atom
+
+atom    : var
+        | integer
+        | '(' exp ')'
+        ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This grammar has a shift/reduce conflict, due to the following ambiguity.
+In an input such as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>if 1 then 2 else 3 + 4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>the grammar doesn&#8217;t specify whether the parse should be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>if 1 then 2 else (3 + 4)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>(if 1 then 2 else 3) + 4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the ambiguity shows up as a shift/reduce conflict on reading the 'op' symbol.
+In this case, the first parse is the intended one (the 'longest parse' rule), which corresponds to the shift action.
+Removing this conflict relies on noticing that the expression on the left-hand side of an infix operator can&#8217;t be an <code>exp0</code> (the grammar previously said otherwise, but since the conflict was resolved as shift, this parse was not allowed).  We can reformulate the <code>exp</code> rule as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>exp     : atom op exp
+        | exp0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and this removes the conflict, but at the expense of some stack space while parsing (we turned a left-recursion into a right-recursion).  There are alternatives using left-recursion, but they all involve adding extra states to the parser, so most programmers will prefer to keep the conflict in favour of a clearer and more efficient parser.</p>
+</div>
+<div class="sect3">
+<h4 id="_sec_lalr">8.4.1. LALR(1) parsers</h4>
+<div class="paragraph">
+<p>There are three basic ways to build a shift-reduce parser.
+Full LR(1) (the `L' is the direction in which the input is scanned, the `R' is the way in which the parse is built, and the `1' is the number of tokens of lookahead) generates a parser with many states, and is therefore large and slow.
+SLR(1) (simple LR(1)) is a cut-down version of LR(1) which generates parsers with roughly one-tenth as many states, but lacks the power to parse many grammars (it finds conflicts in grammars which have none under LR(1)).</p>
+</div>
+<div class="paragraph">
+<p>LALR(1) (look-ahead LR(1)), the method used by <code class="app">Happy</code> and <code class="app">yacc</code>, is a tradeoff between the two.
+An LALR(1) parser has the same number of states as an SLR(1) parser, but it uses a more complex method to calculate the lookahead tokens that are valid at each point, and resolves many of the conflicts that SLR(1) finds.
+However, there may still be conflicts in an LALR(1) parser that wouldn&#8217;t be there with full LR(1).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_happy_ghci">8.5. Using Happy with <code class="app">GHCi</code></h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><code class="app">GHCi</code>'s compilation manager doesn&#8217;t understand Happy grammars, but with some creative use of macros and makefiles we can give the impression that <code class="app">GHCi</code> is invoking Happy automatically:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a simple makefile, called <em class="path">Makefile_happysrcs</em>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>HAPPY = happy
+HAPPY_OPTS =
+
+all: MyParser.hs
+
+%.hs: %.y
+	$(HAPPY) $(HAPPY_OPTS) $&lt; -o $@</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a macro in GHCi to replace the <code>:reload</code> command, like so (type this all on one line):</p>
+<div class="listingblock">
+<div class="content">
+<pre>:def myreload (\_ -&gt; System.system "make -f Makefile_happysrcs"
+   &gt;&gt;= \rr -&gt; case rr of { System.ExitSuccess -&gt; return ":reload" ;
+                           _ -&gt; return "" })</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use <code>:myreload</code>	  (<code>:my</code> will do) instead of <code>:reload</code> (<code>:r</code>).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sec_monad_alex">8.6. Basic monadic Happy use with Alex</h3>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><code class="app">Alex</code> lexers are often used by <code class="app">Happy</code> parsers, for example in GHC.
+While many of these applications are quite sophisticated, it is still quite useful to combine the basic <code class="app">Happy</code><code>%monad</code> directive with the <code class="app">Alex</code><code>monad</code> wrapper.
+By using monads for both, the resulting parser and lexer can handle errors far more gracefully than by throwing an exception.</p>
+</div>
+<div class="paragraph">
+<p>The most straightforward way to use a monadic <code class="app">Alex</code> lexer is to simply use the <code>Alex</code> monad as the <code class="app">Happy</code> monad:</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Lexer.x</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+module Lexer where
+}
+
+%wrapper "monad"
+
+tokens :-
+  ...
+
+{
+data Token = ... | EOF
+  deriving (Eq, Show)
+
+alexEOF = return EOF
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. Parser.y</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+module Parser where
+
+import Lexer
+}
+
+%name pFoo
+%tokentype { Token }
+%error { parseError }
+%monad { Alex } { &gt;&gt;= } { return }
+%lexer { lexer } { EOF }
+
+%token
+  ...
+
+%%
+  ...
+
+parseError :: Token -&gt; Alex a
+parseError _ = do
+  ((AlexPn _ line column), _, _, _) &lt;- alexGetInput
+  alexError ("parse error at line " ++ (show line) ++ ", column " ++ (show column))
+
+lexer :: (Token -&gt; Alex a) -&gt; Alex a
+lexer = (alexMonadScan &gt;&gt;=)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>We can then run the finished parser in the <code>Alex</code> monad using <code>runAlex</code>, which returns an <code>Either</code> value rather than throwing an exception in case of a parse or lexical error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>import qualified Lexer as Lexer
+import qualified Parser as Parser
+
+parseFoo :: String -&gt; Either String Foo
+parseFoo s = Lexer.runAlex s Parser.pFoo</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. With one 	exception: if you have a production with a polymorphic type signature, 	then a compiler that supports local universal quantification is 	required.  See .
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Users of yacc will find       this familiar, Happy&#8217;s precedence scheme works in exactly the       same way.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. Note that semantic rules must not rely on       layout, because whitespace alignment is not guaranteed to be       preserved
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. omitting the           -a may generate slightly faster parsers,           but they will be much bigger.
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-03-21 16:41:05 -0400
+</div>
+</div>
+</body>
+</html>
